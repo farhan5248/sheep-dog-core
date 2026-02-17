@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 
 import org.farhan.dsl.lang.ITestStepContainer;
 import org.farhan.dsl.lang.SheepDogLoggerFactory;
+import org.farhan.dsl.lang.StepObjectRefFragments;
 
 /**
  * Validation logic for grammar elements at different scopes.
@@ -47,6 +48,23 @@ public class TestStepContainerIssueDetector {
      */
     public static String validateTestStepListFile(ITestStepContainer theTestStepContainer) throws Exception {
         logger.debug("Entering validateTestStepListFile");
+
+        var testStepList = theTestStepContainer.getTestStepList();
+        if (!testStepList.isEmpty()) {
+            var firstTestStep = testStepList.get(0);
+            var stepObjectName = firstTestStep.getStepObjectName();
+            if (stepObjectName != null && !stepObjectName.isEmpty()) {
+                // Check if the first step has a component specified
+                var component = StepObjectRefFragments.getComponent(stepObjectName);
+                if (component == null || component.isEmpty()) {
+                    logger.debug("Exiting validateTestStepListFile");
+                    return TestStepContainerIssueTypes.TEST_STEP_CONTAINER_TEST_STEP_LIST_FILE.description;
+                }
+            } else {
+                logger.debug("Exiting validateTestStepListFile");
+                return TestStepContainerIssueTypes.TEST_STEP_CONTAINER_TEST_STEP_LIST_FILE.description;
+            }
+        }
 
         logger.debug("Exiting validateTestStepListFile");
         return "";
