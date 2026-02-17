@@ -12,9 +12,8 @@ import org.farhan.dsl.lang.IStepParameters;
 import org.farhan.dsl.lang.ITable;
 import org.farhan.dsl.lang.ITestProject;
 import org.farhan.dsl.lang.ITestStep;
-import org.farhan.dsl.lang.ITestStepContainer;
-import org.farhan.dsl.lang.ITestSuite;
 import org.farhan.dsl.lang.SheepDogLoggerFactory;
+import org.farhan.dsl.lang.SheepDogUtility;
 import org.farhan.dsl.lang.StepObjectRefFragments;
 
 /**
@@ -60,57 +59,48 @@ public class RowIssueDetector {
 
                         // Only validate if we have both component and object
                         if (!component.isEmpty() && !object.isEmpty()) {
-                            // Navigate to the project
-                            ITestStepContainer container = testStep.getParent();
-                            if (container != null) {
-                                ITestSuite suite = container.getParent();
-                                if (suite != null) {
-                                    ITestProject project = suite.getParent();
-                                    if (project != null) {
-                                        // Get the file extension
-                                        String fileExt = project.getFileExtension();
+                            ITestProject project = SheepDogUtility.getTestProjectParentForRow(theRow);
+                            if (project != null) {
+                                // Get the file extension
+                                String fileExt = project.getFileExtension();
 
-                                        // Build the qualified name
-                                        String qualifiedName = component + "/" + object;
-                                        if (fileExt != null && !fileExt.isEmpty()) {
-                                            qualifiedName += fileExt;
-                                        }
+                                // Build the qualified name
+                                String qualifiedName = component + "/" + object;
+                                if (fileExt != null && !fileExt.isEmpty()) {
+                                    qualifiedName += fileExt;
+                                }
 
-                                        // Check if the step object exists
-                                        IStepObject stepObject = project.getStepObject(qualifiedName);
-                                        if (stepObject != null) {
-                                            // Check if the step definition exists
-                                            IStepDefinition stepDefinition = stepObject
-                                                    .getStepDefinition(stepDefinitionName);
-                                            if (stepDefinition != null) {
-                                                // Get the step parameters
-                                                List<IStepParameters> parameterList = stepDefinition
-                                                        .getStepParameterList();
+                                // Check if the step object exists
+                                IStepObject stepObject = project.getStepObject(qualifiedName);
+                                if (stepObject != null) {
+                                    // Check if the step definition exists
+                                    IStepDefinition stepDefinition = stepObject.getStepDefinition(stepDefinitionName);
+                                    if (stepDefinition != null) {
+                                        // Get the step parameters
+                                        List<IStepParameters> parameterList = stepDefinition.getStepParameterList();
 
-                                                // Get the header row (first row in table)
-                                                List<IRow> rowList = table.getRowList();
-                                                if (rowList != null && !rowList.isEmpty()) {
-                                                    IRow headerRow = rowList.get(0);
+                                        // Get the header row (first row in table)
+                                        List<IRow> rowList = table.getRowList();
+                                        if (rowList != null && !rowList.isEmpty()) {
+                                            IRow headerRow = rowList.get(0);
 
-                                                    // Check if header row cell names match step parameter names
-                                                    List<ICell> headerCells = headerRow.getCellList();
-                                                    if (headerCells != null && !parameterList.isEmpty()) {
-                                                        // Check if all header cells have corresponding parameters
-                                                        for (ICell headerCell : headerCells) {
-                                                            String cellName = headerCell.getName();
-                                                            if (cellName != null && !cellName.isEmpty()) {
-                                                                boolean found = false;
-                                                                for (IStepParameters param : parameterList) {
-                                                                    if (cellName.equals(param.getName())) {
-                                                                        found = true;
-                                                                        break;
-                                                                    }
-                                                                }
-                                                                if (!found) {
-                                                                    message = RowIssueTypes.ROW_CELL_LIST_WORKSPACE.description;
-                                                                    break;
-                                                                }
+                                            // Check if header row cell names match step parameter names
+                                            List<ICell> headerCells = headerRow.getCellList();
+                                            if (headerCells != null && !parameterList.isEmpty()) {
+                                                // Check if all header cells have corresponding parameters
+                                                for (ICell headerCell : headerCells) {
+                                                    String cellName = headerCell.getName();
+                                                    if (cellName != null && !cellName.isEmpty()) {
+                                                        boolean found = false;
+                                                        for (IStepParameters param : parameterList) {
+                                                            if (cellName.equals(param.getName())) {
+                                                                found = true;
+                                                                break;
                                                             }
+                                                        }
+                                                        if (!found) {
+                                                            message = RowIssueTypes.ROW_CELL_LIST_WORKSPACE.description;
+                                                            break;
                                                         }
                                                     }
                                                 }

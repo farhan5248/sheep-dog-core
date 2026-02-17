@@ -5,9 +5,8 @@ import org.slf4j.Logger;
 import org.farhan.dsl.lang.IStepObject;
 import org.farhan.dsl.lang.ITestProject;
 import org.farhan.dsl.lang.ITestStep;
-import org.farhan.dsl.lang.ITestStepContainer;
-import org.farhan.dsl.lang.ITestSuite;
 import org.farhan.dsl.lang.SheepDogLoggerFactory;
+import org.farhan.dsl.lang.SheepDogUtility;
 import org.farhan.dsl.lang.StepObjectRefFragments;
 
 /**
@@ -90,28 +89,21 @@ public class TestStepIssueDetector {
 
             // Only validate if we have both component and object
             if (!component.isEmpty() && !object.isEmpty()) {
-                // Navigate to the project
-                ITestStepContainer container = theTestStep.getParent();
-                if (container != null) {
-                    ITestSuite suite = container.getParent();
-                    if (suite != null) {
-                        ITestProject project = suite.getParent();
-                        if (project != null) {
-                            // Get the file extension
-                            String fileExt = project.getFileExtension();
+                ITestProject project = SheepDogUtility.getTestProjectParentForTestStep(theTestStep);
+                if (project != null) {
+                    // Get the file extension
+                    String fileExt = project.getFileExtension();
 
-                            // Build the qualified name
-                            String qualifiedName = component + "/" + object;
-                            if (fileExt != null && !fileExt.isEmpty()) {
-                                qualifiedName += fileExt;
-                            }
+                    // Build the qualified name
+                    String qualifiedName = component + "/" + object;
+                    if (fileExt != null && !fileExt.isEmpty()) {
+                        qualifiedName += fileExt;
+                    }
 
-                            // Check if the step object exists
-                            IStepObject stepObject = project.getStepObject(qualifiedName);
-                            if (stepObject == null) {
-                                message = TestStepIssueTypes.TEST_STEP_STEP_OBJECT_NAME_WORKSPACE.description;
-                            }
-                        }
+                    // Check if the step object exists
+                    IStepObject stepObject = project.getStepObject(qualifiedName);
+                    if (stepObject == null) {
+                        message = TestStepIssueTypes.TEST_STEP_STEP_OBJECT_NAME_WORKSPACE.description;
                     }
                 }
             }
@@ -146,30 +138,23 @@ public class TestStepIssueDetector {
 
             // Only validate if we have both component and object
             if (!component.isEmpty() && !object.isEmpty()) {
-                // Navigate to the project
-                ITestStepContainer container = theTestStep.getParent();
-                if (container != null) {
-                    ITestSuite suite = container.getParent();
-                    if (suite != null) {
-                        ITestProject project = suite.getParent();
-                        if (project != null) {
-                            // Get the file extension
-                            String fileExt = project.getFileExtension();
+                ITestProject project = SheepDogUtility.getTestProjectParentForTestStep(theTestStep);
+                if (project != null) {
+                    // Get the file extension
+                    String fileExt = project.getFileExtension();
 
-                            // Build the qualified name
-                            String qualifiedName = component + "/" + object;
-                            if (fileExt != null && !fileExt.isEmpty()) {
-                                qualifiedName += fileExt;
-                            }
+                    // Build the qualified name
+                    String qualifiedName = component + "/" + object;
+                    if (fileExt != null && !fileExt.isEmpty()) {
+                        qualifiedName += fileExt;
+                    }
 
-                            // Check if the step object exists
-                            IStepObject stepObject = project.getStepObject(qualifiedName);
-                            if (stepObject != null) {
-                                // Check if the step definition exists in the step object
-                                if (stepObject.getStepDefinition(stepDefinitionName) == null) {
-                                    message = TestStepIssueTypes.TEST_STEP_STEP_DEFINITION_NAME_WORKSPACE.description;
-                                }
-                            }
+                    // Check if the step object exists
+                    IStepObject stepObject = project.getStepObject(qualifiedName);
+                    if (stepObject != null) {
+                        // Check if the step definition exists in the step object
+                        if (stepObject.getStepDefinition(stepDefinitionName) == null) {
+                            message = TestStepIssueTypes.TEST_STEP_STEP_DEFINITION_NAME_WORKSPACE.description;
                         }
                     }
                 }

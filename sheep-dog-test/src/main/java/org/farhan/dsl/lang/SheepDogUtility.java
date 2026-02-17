@@ -186,6 +186,33 @@ public class SheepDogUtility {
 
     /**
      * Gets the grand parent or great grand parent etc for a type. Navigates the
+     * parent hierarchy to reach the TestProject from a Row element.
+     *
+     * @param theRow the row element to navigate from
+     * @return the TestProject parent, or null if not found
+     */
+    public static ITestProject getTestProjectParentForRow(IRow theRow) {
+        if (theRow != null) {
+            ITable table = theRow.getParent();
+            if (table != null) {
+                Object parent = table.getParent();
+                if (parent instanceof ITestStep) {
+                    ITestStep testStep = (ITestStep) parent;
+                    ITestStepContainer container = testStep.getParent();
+                    if (container != null) {
+                        ITestSuite suite = container.getParent();
+                        if (suite != null) {
+                            return suite.getParent();
+                        }
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Gets the grand parent or great grand parent etc for a type. Navigates the
      * parent hierarchy to reach the TestProject from a Text element.
      *
      * @param theText the text element to navigate from
