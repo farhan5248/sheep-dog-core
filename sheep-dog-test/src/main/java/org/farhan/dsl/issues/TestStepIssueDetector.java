@@ -24,7 +24,7 @@ public class TestStepIssueDetector {
      * @return empty string if valid, error description otherwise
      * @throws Exception if validation fails
      */
-    public static String validateStepObjectNameOnly(ITestStep theTestStep) {
+    public static String validateStepObjectNameOnly(ITestStep theTestStep) throws Exception {
         logger.debug("Entering validateStepObjectNameOnly");
 
         if (theTestStep != null) {
@@ -47,7 +47,7 @@ public class TestStepIssueDetector {
      * @return empty string if valid, error description otherwise
      * @throws Exception if validation fails
      */
-    public static String validateStepDefinitionNameOnly(ITestStep theTestStep) {
+    public static String validateStepDefinitionNameOnly(ITestStep theTestStep) throws Exception {
         logger.debug("Entering validateStepDefinitionNameOnly");
 
         if (theTestStep != null) {
