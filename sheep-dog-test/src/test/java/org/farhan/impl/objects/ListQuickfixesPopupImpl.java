@@ -3,14 +3,13 @@ package org.farhan.impl.objects;
 import java.util.HashMap;
 
 import org.farhan.common.TestObject;
-import org.farhan.common.TestObjectIDE;
 import org.farhan.dsl.grammar.SheepDogIssueProposal;
 import org.farhan.objects.xtext.ListQuickfixesPopup;
 
 import io.cucumber.guice.ScenarioScoped;
 
 @ScenarioScoped
-public class ListQuickfixesPopupImpl extends TestObjectIDE implements ListQuickfixesPopup {
+public class ListQuickfixesPopupImpl extends TestObject implements ListQuickfixesPopup {
 
     @Override
     public String getEmpty(HashMap<String, String> keyMap) {

@@ -3,13 +3,12 @@ package org.farhan.impl.objects;
 import java.util.HashMap;
 
 import org.farhan.common.TestObject;
-import org.farhan.common.TestObjectIDE;
 import org.farhan.objects.xtext.ValidateAnnotation;
 
 import io.cucumber.guice.ScenarioScoped;
 
 @ScenarioScoped
-public class ValidateAnnotationImpl extends TestObjectIDE implements ValidateAnnotation {
+public class ValidateAnnotationImpl extends TestObject implements ValidateAnnotation {
 
 	@Override
 	public String getEmpty(HashMap<String, String> keyMap) {
