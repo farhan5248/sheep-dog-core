@@ -112,6 +112,12 @@ public abstract class TestObject {
         return null;
     }
 
+    protected String listToString(List<?> list) {
+        if (list == null) return null;
+        if (list.isEmpty()) return "";
+        return list.toString();
+    }
+
     protected String listToString(ArrayList<?> proposals) {
         StringBuilder sb = new StringBuilder();
         for (Object p : proposals) {

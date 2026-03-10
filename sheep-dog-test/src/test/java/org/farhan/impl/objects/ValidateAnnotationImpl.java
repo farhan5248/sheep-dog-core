@@ -15,7 +15,7 @@ public class ValidateAnnotationImpl extends TestObjectIDE implements ValidateAnn
 	@Override
 	public String getEmpty(HashMap<String, String> keyMap) {
 		Assertions.assertTrue(TestObject.validateDialog.isEmpty());
-		return "";
+		return TestObject.validateDialog;
 	}
 
 	@Override
@@ -36,7 +36,7 @@ public class ValidateAnnotationImpl extends TestObjectIDE implements ValidateAnn
 
 	@Override
 	public String getSetAsFollows(HashMap<String, String> keyMap) {
-		return "";
+		return TestObject.validateDialog;
 	}
 
 	@Override

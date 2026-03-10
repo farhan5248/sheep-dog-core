@@ -19,6 +19,6 @@ public class ProcessIssues2AsciidocFileImpl extends TestObjectIDE implements Pro
     public String getCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "Present";
+        return cursor == null ? null : cursor.toString();
     }
 }

@@ -115,6 +115,25 @@ public class TestObjectIDE extends TestObject {
         cursor = SheepDogBuilder.createText((ITestStep) cursor, content);
     }
 
+    // === cursor query helpers ===
+
+    protected IDescription getDescriptionFromCursor() {
+        if (cursor instanceof ITestSuite) return ((ITestSuite) cursor).getDescription();
+        else if (cursor instanceof ITestStepContainer) return ((ITestStepContainer) cursor).getDescription();
+        else if (cursor instanceof IStepObject) return ((IStepObject) cursor).getDescription();
+        else if (cursor instanceof IStepDefinition) return ((IStepDefinition) cursor).getDescription();
+        else if (cursor instanceof IStepParameters) return ((IStepParameters) cursor).getDescription();
+        else if (cursor instanceof ITestData) return ((ITestData) cursor).getDescription();
+        return null;
+    }
+
+    protected ITable getTableFromCursor() {
+        if (cursor instanceof IStepParameters) return ((IStepParameters) cursor).getTable();
+        else if (cursor instanceof ITestData) return ((ITestData) cursor).getTable();
+        else if (cursor instanceof ITestStep) return ((ITestStep) cursor).getTable();
+        return null;
+    }
+
     // === assert* helpers (from TestObjectDoc) ===
 
     protected String assertCellName(String name) {

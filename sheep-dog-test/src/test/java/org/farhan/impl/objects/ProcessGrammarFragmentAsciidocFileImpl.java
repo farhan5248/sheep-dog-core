@@ -22,9 +22,10 @@ public class ProcessGrammarFragmentAsciidocFileImpl extends TestObjectIDE implem
     @Override
     public String getPhraseTagFragmentTagList(HashMap<String, String> keyMap) {
         String expected = replaceKeyword(keyMap.get("Tag List"));
-        Assertions.assertTrue(PhraseFragments.getTagAsList(properties.get("Line").toString())
+        java.util.List<String> actual = PhraseFragments.getTagAsList(properties.get("Line").toString());
+        Assertions.assertTrue(actual
                 .containsAll(expected.isEmpty() ? Arrays.asList() : Arrays.asList(expected.split(", "))));
-        return "";
+        return listToString(actual);
     }
 
     @Override
@@ -210,14 +211,14 @@ public class ProcessGrammarFragmentAsciidocFileImpl extends TestObjectIDE implem
     public String getStepObjectRefObjectVertexFragmentDecomposedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "Present";
+        return cursor == null ? null : cursor.toString();
     }
 
     @Override
     public String getStepObjectRefObjectFragmentDecomposedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "Present";
+        return cursor == null ? null : cursor.toString();
     }
 
     @Override
@@ -229,42 +230,42 @@ public class ProcessGrammarFragmentAsciidocFileImpl extends TestObjectIDE implem
     public String getPhraseTagFragmentDecomposedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "Present";
+        return cursor == null ? null : cursor.toString();
     }
 
     @Override
     public String getPhraseTodoFragmentDecomposedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "Present";
+        return cursor == null ? null : cursor.toString();
     }
 
     @Override
     public String getStepDefinitionRefPartFragmentDecomposedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "Present";
+        return cursor == null ? null : cursor.toString();
     }
 
     @Override
     public String getStepDefinitionRefStateFragmentDecomposedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "Present";
+        return cursor == null ? null : cursor.toString();
     }
 
     @Override
     public String getStepObjectRefComponentFragmentDecomposedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "Present";
+        return cursor == null ? null : cursor.toString();
     }
 
     @Override
     public String getStepObjectRefObjectEdgeFragmentDecomposedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "Present";
+        return cursor == null ? null : cursor.toString();
     }
 
     private String getStepDefinitionRef() {

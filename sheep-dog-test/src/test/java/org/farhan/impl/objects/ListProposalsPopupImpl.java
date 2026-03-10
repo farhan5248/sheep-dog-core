@@ -16,7 +16,7 @@ public class ListProposalsPopupImpl extends TestObjectIDE implements ListProposa
     @Override
     public String getEmpty(HashMap<String, String> keyMap) {
         Assertions.assertTrue(TestObject.listProposalsDialog.isEmpty());
-        return "";
+        return listToString(TestObject.listProposalsDialog);
     }
 
     @Override
@@ -67,7 +67,7 @@ public class ListProposalsPopupImpl extends TestObjectIDE implements ListProposa
 
     @Override
     public String getSetAsFollows(HashMap<String, String> keyMap) {
-        return "";
+        return listToString(TestObject.listProposalsDialog);
     }
 
 }

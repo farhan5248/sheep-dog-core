@@ -16,7 +16,7 @@ public class ListQuickfixesPopupImpl extends TestObjectIDE implements ListQuickf
     @Override
     public String getEmpty(HashMap<String, String> keyMap) {
         Assertions.assertTrue(TestObject.listQuickfixesDialog.isEmpty());
-        return "";
+        return listToString(TestObject.listQuickfixesDialog);
     }
 
     @Override
@@ -83,7 +83,7 @@ public class ListQuickfixesPopupImpl extends TestObjectIDE implements ListQuickf
 
     @Override
     public String getSetAsFollows(HashMap<String, String> keyMap) {
-        return "";
+        return listToString(TestObject.listQuickfixesDialog);
     }
 
     @Override

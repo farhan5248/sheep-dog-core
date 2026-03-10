@@ -19,6 +19,6 @@ public class Input2FileAsciidocFileImpl extends TestObjectIDE implements Input2F
     public String getCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "Present";
+        return cursor == null ? null : cursor.toString();
     }
 }
