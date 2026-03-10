@@ -2,37 +2,37 @@ package org.farhan.impl.objects;
 
 import java.util.HashMap;
 
-import org.farhan.common.TestObject;
+import org.farhan.common.TestObjectAnnotation;
 import org.farhan.objects.xtext.ValidateAnnotation;
 
 import io.cucumber.guice.ScenarioScoped;
 
 @ScenarioScoped
-public class ValidateAnnotationImpl extends TestObject implements ValidateAnnotation {
+public class ValidateAnnotationImpl extends TestObjectAnnotation implements ValidateAnnotation {
 
 	@Override
 	public String getEmpty(HashMap<String, String> keyMap) {
-		return TestObject.validateDialog;
+		return validateDialog;
 	}
 
 	@Override
 	public String getContent(HashMap<String, String> keyMap) {
-		return TestObject.validateDialog;
+		return validateDialog;
 	}
 
 	@Override
 	public void setEmpty(HashMap<String, String> keyMap) {
-		TestObject.validateDialog = replaceKeyword("empty");
+		validateDialog = replaceKeyword("empty");
 	}
 
 	@Override
 	public void setContent(HashMap<String, String> keyMap) {
-		TestObject.validateDialog = keyMap.get("Content");
+		validateDialog = keyMap.get("Content");
 	}
 
 	@Override
 	public String getSetAsFollows(HashMap<String, String> keyMap) {
-		return TestObject.validateDialog;
+		return validateDialog;
 	}
 
 	@Override

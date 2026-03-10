@@ -3,8 +3,7 @@ package org.farhan.impl.objects;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.farhan.common.TestObject;
-import org.farhan.common.TestObjectIDE;
+import org.farhan.common.TestObjectAction;
 import org.farhan.dsl.grammar.ICell;
 import org.farhan.dsl.grammar.IRow;
 import org.farhan.dsl.grammar.IStepObject;
@@ -30,7 +29,7 @@ import org.junit.jupiter.api.Assertions;
 import io.cucumber.guice.ScenarioScoped;
 
 @ScenarioScoped
-public class ApplyQuickfixActionImpl extends TestObjectIDE implements ApplyQuickfixAction {
+public class ApplyQuickfixActionImpl extends TestObjectAction implements ApplyQuickfixAction {
 
     private static void applyProposal(ArrayList<SheepDogIssueProposal> proposals) throws Exception {
         for (SheepDogIssueProposal p : proposals) {
@@ -69,13 +68,13 @@ public class ApplyQuickfixActionImpl extends TestObjectIDE implements ApplyQuick
             properties.remove("Node Path");
         }
         try {
-            if (TestObject.cursor instanceof ICell) {
-                ICell cell = (ICell) TestObject.cursor;
+            if (cursor instanceof ICell) {
+                ICell cell = (ICell) cursor;
                 if (!CellIssueDetector.validateNameOnly(cell).isEmpty()) {
                     applyProposal(CellIssueResolver.correctNameOnly(cell));
                 }
-            } else if (TestObject.cursor instanceof IRow) {
-                IRow row = (IRow) TestObject.cursor;
+            } else if (cursor instanceof IRow) {
+                IRow row = (IRow) cursor;
                 ITestStep testStep = (ITestStep) row.getParent().getParent();
                 if (!testStep.getTable().getRowList().isEmpty()
                         && (testStep.getTable().getRowList().getFirst() != null)) {
@@ -83,27 +82,27 @@ public class ApplyQuickfixActionImpl extends TestObjectIDE implements ApplyQuick
                         applyProposal(RowIssueResolver.correctCellListWorkspace(testStep));
                     }
                 }
-            } else if (TestObject.cursor instanceof IText) {
-                IText text = (IText) TestObject.cursor;
+            } else if (cursor instanceof IText) {
+                IText text = (IText) cursor;
                 ITestStep testStep = (ITestStep) text.getParent();
                 if (!TextIssueDetector.validateNameWorkspace(text).isEmpty()) {
                     applyProposal(TextIssueResolver.correctNameWorkspace(testStep));
                 }
-            } else if (TestObject.cursor instanceof ITestStep) {
-                ITestStep testStep = (ITestStep) TestObject.cursor;
+            } else if (cursor instanceof ITestStep) {
+                ITestStep testStep = (ITestStep) cursor;
                 if (!TestStepIssueDetector.validateStepObjectNameWorkspace(testStep).isEmpty()) {
                     applyProposal(TestStepIssueResolver.correctStepObjectNameWorkspace(testStep));
                 }
                 if (!TestStepIssueDetector.validateStepDefinitionNameWorkspace(testStep).isEmpty()) {
                     applyProposal(TestStepIssueResolver.correctStepDefinitionNameWorkspace(testStep));
                 }
-            } else if (TestObject.cursor instanceof ITestStepContainer) {
-                ITestStepContainer testStepContainer = (ITestStepContainer) TestObject.cursor;
+            } else if (cursor instanceof ITestStepContainer) {
+                ITestStepContainer testStepContainer = (ITestStepContainer) cursor;
                 if (!TestStepContainerIssueDetector.validateNameOnly(testStepContainer).isEmpty()) {
                     applyProposal(TestStepContainerIssueResolver.correctNameOnly(testStepContainer));
                 }
-            } else if (TestObject.cursor instanceof ITestSuite) {
-                ITestSuite testSuite = (ITestSuite) TestObject.cursor;
+            } else if (cursor instanceof ITestSuite) {
+                ITestSuite testSuite = (ITestSuite) cursor;
                 if (!TestSuiteIssueDetector.validateNameOnly(testSuite).isEmpty()) {
                     applyProposal(TestSuiteIssueResolver.correctNameOnly(testSuite));
                 }

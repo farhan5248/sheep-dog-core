@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import org.farhan.dsl.grammar.ITestProject;
-import org.farhan.dsl.grammar.SheepDogBuilder;
-import org.farhan.dsl.grammar.SheepDogIssueProposal;
 import org.junit.jupiter.api.Assertions;
 
 import com.google.inject.Injector;
@@ -17,20 +14,7 @@ import io.cucumber.datatable.DataTable;
 public abstract class TestObject {
 
     protected static Injector injector;
-    protected static Object cursor;
-    protected static ITestProject testProject;
-    protected static String validateDialog = "";
-    protected static ArrayList<SheepDogIssueProposal> listProposalsDialog = new ArrayList<SheepDogIssueProposal>();
-    protected static ArrayList<SheepDogIssueProposal> listQuickfixesDialog = new ArrayList<SheepDogIssueProposal>();
     protected HashMap<String, Object> properties = new HashMap<String, Object>();
-
-    public static void reset() {
-        testProject = SheepDogBuilder.createTestProject();
-        cursor = testProject;
-        validateDialog = "";
-        listProposalsDialog = new ArrayList<SheepDogIssueProposal>();
-        listQuickfixesDialog = new ArrayList<SheepDogIssueProposal>();
-    }
 
     public void assertInputOutputsDataTable(DataTable dataTable) {
         processInputOutputs(dataTable, "get", "", false);
@@ -118,13 +102,6 @@ public abstract class TestObject {
         return list.toString();
     }
 
-    protected String listToString(ArrayList<?> proposals) {
-        StringBuilder sb = new StringBuilder();
-        for (Object p : proposals) {
-            sb.append("\n").append(p.toString());
-        }
-        return sb.toString();
-    }
 
     protected void processInputOutputs(DataTable dataTable, String operation, String sectionName,
             boolean negativeTest) {

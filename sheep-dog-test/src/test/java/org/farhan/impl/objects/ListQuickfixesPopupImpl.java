@@ -2,23 +2,23 @@ package org.farhan.impl.objects;
 
 import java.util.HashMap;
 
-import org.farhan.common.TestObject;
+import org.farhan.common.TestObjectPopup;
 import org.farhan.dsl.grammar.SheepDogIssueProposal;
 import org.farhan.objects.xtext.ListQuickfixesPopup;
 
 import io.cucumber.guice.ScenarioScoped;
 
 @ScenarioScoped
-public class ListQuickfixesPopupImpl extends TestObject implements ListQuickfixesPopup {
+public class ListQuickfixesPopupImpl extends TestObjectPopup implements ListQuickfixesPopup {
 
     @Override
     public String getEmpty(HashMap<String, String> keyMap) {
-        return listToString(TestObject.listQuickfixesDialog);
+        return listToString(listQuickfixesDialog);
     }
 
     @Override
     public String getProposalValue(HashMap<String, String> keyMap) {
-        for (SheepDogIssueProposal p : TestObject.listQuickfixesDialog) {
+        for (SheepDogIssueProposal p : listQuickfixesDialog) {
             if (p.getId().equals(keyMap.get("Proposal Id"))
                     && p.getValue().toString().contentEquals(keyMap.get("Proposal Value"))) {
                 return p.getValue().toString();
@@ -29,7 +29,7 @@ public class ListQuickfixesPopupImpl extends TestObject implements ListQuickfixe
 
     @Override
     public String getProposalDescription(HashMap<String, String> keyMap) {
-        for (SheepDogIssueProposal p : TestObject.listQuickfixesDialog) {
+        for (SheepDogIssueProposal p : listQuickfixesDialog) {
             if (p.getId().equals(keyMap.get("Proposal Id"))
                     && p.getDescription().contentEquals(replaceKeyword(keyMap.get("Proposal Description")))) {
                 return p.getDescription();
@@ -40,7 +40,7 @@ public class ListQuickfixesPopupImpl extends TestObject implements ListQuickfixe
 
     @Override
     public String getProposalId(HashMap<String, String> keyMap) {
-        for (SheepDogIssueProposal p : TestObject.listQuickfixesDialog) {
+        for (SheepDogIssueProposal p : listQuickfixesDialog) {
             if (p.getId().equals(keyMap.get("Proposal Id"))) {
                 return p.getId();
             }
@@ -50,23 +50,23 @@ public class ListQuickfixesPopupImpl extends TestObject implements ListQuickfixe
 
     @Override
     public void setProposalId(HashMap<String, String> keyMap) {
-        TestObject.listQuickfixesDialog.add(new SheepDogIssueProposal());
-        TestObject.listQuickfixesDialog.getLast().setId(keyMap.get("Proposal Id"));
+        listQuickfixesDialog.add(new SheepDogIssueProposal());
+        listQuickfixesDialog.getLast().setId(keyMap.get("Proposal Id"));
     }
 
     @Override
     public void setProposalDescription(HashMap<String, String> keyMap) {
-        TestObject.listQuickfixesDialog.getLast().setDescription(keyMap.get("Proposal Description"));
+        listQuickfixesDialog.getLast().setDescription(keyMap.get("Proposal Description"));
     }
 
     @Override
     public void setProposalValue(HashMap<String, String> keyMap) {
-        TestObject.listQuickfixesDialog.getLast().setValue(keyMap.get("Proposal Value"));
+        listQuickfixesDialog.getLast().setValue(keyMap.get("Proposal Value"));
     }
 
     @Override
     public String getSetAsFollows(HashMap<String, String> keyMap) {
-        return listToString(TestObject.listQuickfixesDialog);
+        return listToString(listQuickfixesDialog);
     }
 
     @Override

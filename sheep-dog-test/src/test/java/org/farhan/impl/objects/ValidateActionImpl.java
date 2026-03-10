@@ -2,8 +2,7 @@ package org.farhan.impl.objects;
 
 import java.util.HashMap;
 
-import org.farhan.common.TestObject;
-import org.farhan.common.TestObjectIDE;
+import org.farhan.common.TestObjectAction;
 import org.farhan.dsl.grammar.ICell;
 import org.farhan.dsl.grammar.IRow;
 import org.farhan.dsl.grammar.ITestStep;
@@ -22,7 +21,7 @@ import org.junit.jupiter.api.Assertions;
 import io.cucumber.guice.ScenarioScoped;
 
 @ScenarioScoped
-public class ValidateActionImpl extends TestObjectIDE implements ValidateAction {
+public class ValidateActionImpl extends TestObjectAction implements ValidateAction {
 
     public void transition() {
         super.transition();
@@ -31,80 +30,80 @@ public class ValidateActionImpl extends TestObjectIDE implements ValidateAction 
             properties.remove("Node Path");
         }
         try {
-            if (TestObject.cursor instanceof ICell) {
-                ICell cell = (ICell) TestObject.cursor;
-                if (TestObject.validateDialog == null || TestObject.validateDialog.isEmpty()) {
-                    TestObject.validateDialog = CellIssueDetector.validateNameOnly(cell);
-                    if (TestObject.validateDialog == null) {
-                        TestObject.validateDialog = "";
+            if (cursor instanceof ICell) {
+                ICell cell = (ICell) cursor;
+                if (validateDialog == null || validateDialog.isEmpty()) {
+                    validateDialog = CellIssueDetector.validateNameOnly(cell);
+                    if (validateDialog == null) {
+                        validateDialog = "";
                     }
                 }
-            } else if (TestObject.cursor instanceof IRow) {
-                IRow row = (IRow) TestObject.cursor;
-                if (TestObject.validateDialog == null || TestObject.validateDialog.isEmpty()) {
-                    TestObject.validateDialog = RowIssueDetector.validateCellListWorkspace(row);
-                    if (TestObject.validateDialog == null) {
-                        TestObject.validateDialog = "";
+            } else if (cursor instanceof IRow) {
+                IRow row = (IRow) cursor;
+                if (validateDialog == null || validateDialog.isEmpty()) {
+                    validateDialog = RowIssueDetector.validateCellListWorkspace(row);
+                    if (validateDialog == null) {
+                        validateDialog = "";
                     }
                 }
-            } else if (TestObject.cursor instanceof IText) {
-                IText text = (IText) TestObject.cursor;
-                if (TestObject.validateDialog == null || TestObject.validateDialog.isEmpty()) {
-                    TestObject.validateDialog = TextIssueDetector.validateNameWorkspace(text);
-                    if (TestObject.validateDialog == null) {
-                        TestObject.validateDialog = "";
+            } else if (cursor instanceof IText) {
+                IText text = (IText) cursor;
+                if (validateDialog == null || validateDialog.isEmpty()) {
+                    validateDialog = TextIssueDetector.validateNameWorkspace(text);
+                    if (validateDialog == null) {
+                        validateDialog = "";
                     }
                 }
-            } else if (TestObject.cursor instanceof ITestStep) {
-                ITestStep testStep = (ITestStep) TestObject.cursor;
-                if (TestObject.validateDialog == null || TestObject.validateDialog.isEmpty()) {
-                    TestObject.validateDialog = TestStepIssueDetector.validateStepObjectNameOnly(testStep);
-                    if (TestObject.validateDialog == null) {
-                        TestObject.validateDialog = "";
+            } else if (cursor instanceof ITestStep) {
+                ITestStep testStep = (ITestStep) cursor;
+                if (validateDialog == null || validateDialog.isEmpty()) {
+                    validateDialog = TestStepIssueDetector.validateStepObjectNameOnly(testStep);
+                    if (validateDialog == null) {
+                        validateDialog = "";
                     }
-                    if (TestObject.validateDialog.isEmpty()) {
-                        TestObject.validateDialog = TestStepIssueDetector.validateStepDefinitionNameOnly(testStep);
-                        if (TestObject.validateDialog == null) {
-                            TestObject.validateDialog = "";
+                    if (validateDialog.isEmpty()) {
+                        validateDialog = TestStepIssueDetector.validateStepDefinitionNameOnly(testStep);
+                        if (validateDialog == null) {
+                            validateDialog = "";
                         }
-                        if (TestObject.validateDialog.isEmpty()) {
-                            TestObject.validateDialog = TestStepIssueDetector
+                        if (validateDialog.isEmpty()) {
+                            validateDialog = TestStepIssueDetector
                                     .validateStepObjectNameWorkspace(testStep);
-                            if (TestObject.validateDialog == null) {
-                                TestObject.validateDialog = "";
+                            if (validateDialog == null) {
+                                validateDialog = "";
                             }
-                            if (TestObject.validateDialog.isEmpty()) {
-                                TestObject.validateDialog = TestStepIssueDetector
+                            if (validateDialog.isEmpty()) {
+                                validateDialog = TestStepIssueDetector
                                         .validateStepDefinitionNameWorkspace(testStep);
-                                if (TestObject.validateDialog == null) {
-                                    TestObject.validateDialog = "";
+                                if (validateDialog == null) {
+                                    validateDialog = "";
                                 }
                             }
                         }
                     }
                 }
-            } else if (TestObject.cursor instanceof ITestStepContainer) {
-                ITestStepContainer testStepContainer = (ITestStepContainer) TestObject.cursor;
-                if (TestObject.validateDialog == null || TestObject.validateDialog.isEmpty()) {
-                    TestObject.validateDialog = TestStepContainerIssueDetector
+            } else if (cursor instanceof ITestStepContainer) {
+                ITestStepContainer testStepContainer = (ITestStepContainer) cursor;
+                if (validateDialog == null || validateDialog.isEmpty()) {
+                    validateDialog = TestStepContainerIssueDetector
                             .validateTestStepListFile(testStepContainer);
-                    if (TestObject.validateDialog == null) {
-                        TestObject.validateDialog = "";
+                    if (validateDialog == null) {
+                        validateDialog = "";
                     }
-                    if (TestObject.validateDialog.isEmpty()) {
-                        TestObject.validateDialog = TestStepContainerIssueDetector
+                    if (validateDialog.isEmpty()) {
+                        validateDialog = TestStepContainerIssueDetector
                                 .validateNameOnly(testStepContainer);
-                        if (TestObject.validateDialog == null) {
-                            TestObject.validateDialog = "";
+                        if (validateDialog == null) {
+                            validateDialog = "";
                         }
                     }
                 }
-            } else if (TestObject.cursor instanceof ITestSuite) {
-                ITestSuite testSuite = (ITestSuite) TestObject.cursor;
-                if (TestObject.validateDialog == null || TestObject.validateDialog.isEmpty()) {
-                    TestObject.validateDialog = TestSuiteIssueDetector.validateNameOnly(testSuite);
-                    if (TestObject.validateDialog == null) {
-                        TestObject.validateDialog = "";
+            } else if (cursor instanceof ITestSuite) {
+                ITestSuite testSuite = (ITestSuite) cursor;
+                if (validateDialog == null || validateDialog.isEmpty()) {
+                    validateDialog = TestSuiteIssueDetector.validateNameOnly(testSuite);
+                    if (validateDialog == null) {
+                        validateDialog = "";
                     }
                 }
             } else {
