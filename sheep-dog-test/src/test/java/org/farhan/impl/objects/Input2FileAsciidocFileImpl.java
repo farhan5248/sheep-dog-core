@@ -11,13 +11,15 @@ import io.cucumber.guice.ScenarioScoped;
 public class Input2FileAsciidocFileImpl extends TestObjectIDE implements Input2FileAsciidocFile {
 
     @Override
-    public void assertStepObjectName(HashMap<String, String> keyMap) {
+    public String getStepObjectName(HashMap<String, String> keyMap) {
         assertStepObjectName(replaceKeyword(keyMap.get("Step Object Name")));
+        return "";
     }
 
     @Override
-    public void assertCreatedAsFollows(HashMap<String, String> keyMap) {
+    public String getCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
+        return "";
     }
 }

@@ -33,39 +33,39 @@ public abstract class TestObject {
     }
 
     public void assertInputOutputsDataTable(DataTable dataTable) {
-        processInputOutputs(dataTable, "assert", "", false);
+        processInputOutputs(dataTable, "get", "", false);
     }
 
     public void assertInputOutputsDataTable(DataTable dataTable, String sectionName) {
-        processInputOutputs(dataTable, "assert", sectionName, false);
+        processInputOutputs(dataTable, "get", sectionName, false);
     }
 
     public void assertInputOutputsDataTable(DataTable dataTable, String sectionName, boolean negativeTest) {
-        processInputOutputs(dataTable, "assert", sectionName, negativeTest);
+        processInputOutputs(dataTable, "get", sectionName, negativeTest);
     }
 
     public void assertInputOutputsDocString(String key, String value) {
-        processInputOutputs(key, value, "assert", "", false);
+        processInputOutputs(key, value, "get", "", false);
     }
 
     public void assertInputOutputsState(String key) {
-        processInputOutputs(key, "true", "assert", "", false);
+        processInputOutputs(key, "true", "get", "", false);
     }
 
     public void assertInputOutputsState(String key, boolean negativeTest) {
-        processInputOutputs(key, "true", "assert", "", negativeTest);
+        processInputOutputs(key, "true", "get", "", negativeTest);
     }
 
     public void assertInputOutputsState(String key, String sectionName) {
-        processInputOutputs(key, "", "assert", sectionName, false);
+        processInputOutputs(key, "", "get", sectionName, false);
     }
 
     public void assertInputOutputsState(String key, String value, String sectionName) {
-        processInputOutputs(key, value, "assert", sectionName, false);
+        processInputOutputs(key, value, "get", sectionName, false);
     }
 
     public void assertInputOutputsState(String key, String sectionName, boolean negativeTest) {
-        processInputOutputs(key, "", "assert", sectionName, negativeTest);
+        processInputOutputs(key, "", "get", sectionName, negativeTest);
     }
 
     public void setInputOutputsDataTable(DataTable dataTable) {

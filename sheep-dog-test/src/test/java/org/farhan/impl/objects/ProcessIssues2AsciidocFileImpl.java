@@ -11,13 +11,15 @@ import io.cucumber.guice.ScenarioScoped;
 public class ProcessIssues2AsciidocFileImpl extends TestObjectIDE implements ProcessIssues2AsciidocFile {
 
     @Override
-    public void assertTestSuiteName(HashMap<String, String> keyMap) {
+    public String getTestSuiteName(HashMap<String, String> keyMap) {
         assertTestSuiteName(replaceKeyword(keyMap.get("Test Suite Name")));
+        return "";
     }
 
     @Override
-    public void assertCreatedAsFollows(HashMap<String, String> keyMap) {
+    public String getCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
+        return "";
     }
 }

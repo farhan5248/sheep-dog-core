@@ -13,13 +13,15 @@ import io.cucumber.guice.ScenarioScoped;
 public class ValidateAnnotationImpl extends TestObjectIDE implements ValidateAnnotation {
 
 	@Override
-	public void assertEmpty(HashMap<String, String> keyMap) {
+	public String getEmpty(HashMap<String, String> keyMap) {
 		Assertions.assertTrue(TestObject.validateDialog.isEmpty());
+		return "";
 	}
 
 	@Override
-	public void assertContent(HashMap<String, String> keyMap) {
+	public String getContent(HashMap<String, String> keyMap) {
 		Assertions.assertEquals(keyMap.get("Content"), TestObject.validateDialog);
+		return "";
 	}
 
 	@Override
@@ -33,7 +35,8 @@ public class ValidateAnnotationImpl extends TestObjectIDE implements ValidateAnn
 	}
 
 	@Override
-	public void assertSetAsFollows(HashMap<String, String> keyMap) {
+	public String getSetAsFollows(HashMap<String, String> keyMap) {
+		return "";
 	}
 
 	@Override

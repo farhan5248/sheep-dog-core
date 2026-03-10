@@ -14,16 +14,17 @@ import io.cucumber.guice.ScenarioScoped;
 public class ListQuickfixesPopupImpl extends TestObjectIDE implements ListQuickfixesPopup {
 
     @Override
-    public void assertEmpty(HashMap<String, String> keyMap) {
+    public String getEmpty(HashMap<String, String> keyMap) {
         Assertions.assertTrue(TestObject.listQuickfixesDialog.isEmpty());
+        return "";
     }
 
     @Override
-    public void assertProposalValue(HashMap<String, String> keyMap) {
+    public String getProposalValue(HashMap<String, String> keyMap) {
         for (SheepDogIssueProposal p : TestObject.listQuickfixesDialog) {
             if (p.getId().equals(keyMap.get("Proposal Id"))
                     && p.getValue().toString().contentEquals(keyMap.get("Proposal Value"))) {
-                return;
+                return "";
             }
         }
         StringBuilder sb = new StringBuilder();
@@ -31,14 +32,15 @@ public class ListQuickfixesPopupImpl extends TestObjectIDE implements ListQuickf
         sb.append(" and value: ").append(keyMap.get("Proposal Value"));
         sb.append(listToString(TestObject.listQuickfixesDialog));
         Assertions.fail(sb.toString());
+        return "";
     }
 
     @Override
-    public void assertProposalDescription(HashMap<String, String> keyMap) {
+    public String getProposalDescription(HashMap<String, String> keyMap) {
         for (SheepDogIssueProposal p : TestObject.listQuickfixesDialog) {
             if (p.getId().equals(keyMap.get("Proposal Id"))
                     && p.getDescription().contentEquals(replaceKeyword(keyMap.get("Proposal Description")))) {
-                return;
+                return "";
             }
         }
         StringBuilder sb = new StringBuilder();
@@ -46,19 +48,21 @@ public class ListQuickfixesPopupImpl extends TestObjectIDE implements ListQuickf
         sb.append(" and description: ").append(keyMap.get("Proposal Description"));
         sb.append(listToString(TestObject.listQuickfixesDialog));
         Assertions.fail(sb.toString());
+        return "";
     }
 
     @Override
-    public void assertProposalId(HashMap<String, String> keyMap) {
+    public String getProposalId(HashMap<String, String> keyMap) {
         for (SheepDogIssueProposal p : TestObject.listQuickfixesDialog) {
             if (p.getId().equals(keyMap.get("Proposal Id"))) {
-                return;
+                return "";
             }
         }
         StringBuilder sb = new StringBuilder();
         sb.append("No quickfix found with ID that matches the name: ").append(keyMap.get("Proposal Id"));
         sb.append(listToString(TestObject.listQuickfixesDialog));
         Assertions.fail(sb.toString());
+        return "";
     }
 
     @Override
@@ -78,7 +82,8 @@ public class ListQuickfixesPopupImpl extends TestObjectIDE implements ListQuickf
     }
 
     @Override
-    public void assertSetAsFollows(HashMap<String, String> keyMap) {
+    public String getSetAsFollows(HashMap<String, String> keyMap) {
+        return "";
     }
 
     @Override
