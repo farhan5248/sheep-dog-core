@@ -185,11 +185,13 @@ public class ProcessGrammarFragmentAsciidocFileImpl extends TestObjectIDE implem
     @Override
     public void assertStepObjectRefObjectVertexFragmentDecomposedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
     public void assertStepObjectRefObjectFragmentDecomposedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
@@ -200,31 +202,37 @@ public class ProcessGrammarFragmentAsciidocFileImpl extends TestObjectIDE implem
     @Override
     public void assertPhraseTagFragmentDecomposedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
     public void assertPhraseTodoFragmentDecomposedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
     public void assertStepDefinitionRefPartFragmentDecomposedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
     public void assertStepDefinitionRefStateFragmentDecomposedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
     public void assertStepObjectRefComponentFragmentDecomposedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
     public void assertStepObjectRefObjectEdgeFragmentDecomposedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     private String getStepDefinitionRef() {

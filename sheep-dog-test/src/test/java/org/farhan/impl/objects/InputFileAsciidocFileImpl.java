@@ -174,6 +174,7 @@ public class InputFileAsciidocFileImpl extends TestObjectIDE implements InputFil
     @Override
     public void assertCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
@@ -184,6 +185,7 @@ public class InputFileAsciidocFileImpl extends TestObjectIDE implements InputFil
     @Override
     public void assertTableNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
@@ -194,11 +196,13 @@ public class InputFileAsciidocFileImpl extends TestObjectIDE implements InputFil
     @Override
     public void assertCellListNodeCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
     public void assertDescriptionNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
@@ -209,11 +213,13 @@ public class InputFileAsciidocFileImpl extends TestObjectIDE implements InputFil
     @Override
     public void assertLineListNodeCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
     public void assertNestedDescriptionNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
@@ -224,11 +230,13 @@ public class InputFileAsciidocFileImpl extends TestObjectIDE implements InputFil
     @Override
     public void assertStepDefinitionListNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
     public void assertStepDefinitionListNodeCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
@@ -239,10 +247,12 @@ public class InputFileAsciidocFileImpl extends TestObjectIDE implements InputFil
     @Override
     public void assertStepParametersListNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
     public void assertStepParametersListNodeCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 }

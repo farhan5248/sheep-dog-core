@@ -3,6 +3,7 @@ package org.farhan.impl.objects;
 import java.util.HashMap;
 import org.farhan.common.TestObjectIDE;
 import org.farhan.objects.specprj.src.test.resources.asciidoc.specs.ProcessIssues2AsciidocFile;
+import org.junit.jupiter.api.Assertions;
 
 import io.cucumber.guice.ScenarioScoped;
 
@@ -17,5 +18,6 @@ public class ProcessIssues2AsciidocFileImpl extends TestObjectIDE implements Pro
     @Override
     public void assertCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 }

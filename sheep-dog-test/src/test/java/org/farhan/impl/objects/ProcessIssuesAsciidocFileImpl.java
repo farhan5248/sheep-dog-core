@@ -299,6 +299,7 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public void assertCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
@@ -309,6 +310,7 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public void assertTextNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
@@ -319,16 +321,19 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public void assertCellListNodeCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
     public void assertDescriptionNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
     public void assertNestedDescriptionNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
@@ -339,6 +344,7 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public void assertRowListNodeCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
@@ -349,6 +355,7 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public void assertTableNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
@@ -359,11 +366,13 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public void assertTestDataListNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
     public void assertTestDataListNodeCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
@@ -374,11 +383,13 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public void assertTestStepContainerListNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
     public void assertTestStepContainerListNodeCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
@@ -389,11 +400,13 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public void assertTestStepListNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
     public void assertTestStepListNodeCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
+        Assertions.assertNotNull(cursor);
     }
 
     @Override
