@@ -12,14 +12,13 @@ public class Input2FileAsciidocFileImpl extends TestObjectIDE implements Input2F
 
     @Override
     public String getStepObjectName(HashMap<String, String> keyMap) {
-        assertStepObjectName(replaceKeyword(keyMap.get("Step Object Name")));
-        return "";
+        return assertStepObjectName(replaceKeyword(keyMap.get("Step Object Name")));
     }
 
     @Override
     public String getCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "";
+        return "Present";
     }
 }

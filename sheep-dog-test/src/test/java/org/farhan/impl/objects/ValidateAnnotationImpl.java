@@ -21,7 +21,7 @@ public class ValidateAnnotationImpl extends TestObjectIDE implements ValidateAnn
 	@Override
 	public String getContent(HashMap<String, String> keyMap) {
 		Assertions.assertEquals(keyMap.get("Content"), TestObject.validateDialog);
-		return "";
+		return TestObject.validateDialog;
 	}
 
 	@Override

@@ -12,20 +12,19 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
 
     @Override
     public String getCellListNodeCellName(HashMap<String, String> keyMap) {
-        assertCellName(replaceKeyword(keyMap.get("Cell Name")));
-        return "";
+        return assertCellName(replaceKeyword(keyMap.get("Cell Name")));
     }
 
     @Override
     public String getCellListNodeNodePath(HashMap<String, String> keyMap) {
         setCursorAtNode(keyMap.get("Node Path"));
-        return "";
+        return "Present";
     }
 
     @Override
     public String getDescriptionNodeNodePath(HashMap<String, String> keyMap) {
         setCursorAtNode(keyMap.get("Node Path"));
-        return "";
+        return "Present";
     }
 
     @Override
@@ -33,13 +32,13 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
         if (keyMap.get("State").contentEquals("Absent")) {
             assertDescriptionEmpty();
         }
-        return "";
+        return keyMap.get("State");
     }
 
     @Override
     public String getNestedDescriptionNodeNodePath(HashMap<String, String> keyMap) {
         setCursorAtNode(keyMap.get("Node Path"));
-        return "";
+        return "Present";
     }
 
     @Override
@@ -47,25 +46,24 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
         if (keyMap.get("State").contentEquals("Absent")) {
             assertDescriptionEmpty();
         }
-        return "";
+        return keyMap.get("State");
     }
 
     @Override
     public String getRowListNodeNodePath(HashMap<String, String> keyMap) {
         setCursorAtNode(keyMap.get("Node Path"));
-        return "";
+        return "Present";
     }
 
     @Override
     public String getRowListNodeRowContent(HashMap<String, String> keyMap) {
-        assertRowContent(replaceKeyword(keyMap.get("Row Content")));
-        return "";
+        return assertRowContent(replaceKeyword(keyMap.get("Row Content")));
     }
 
     @Override
     public String getTableNodeNodePath(HashMap<String, String> keyMap) {
         setCursorAtNode(keyMap.get("Node Path"));
-        return "";
+        return "Present";
     }
 
     @Override
@@ -75,13 +73,13 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
         } else if (keyMap.get("State").contentEquals("Present")) {
             assertTablePresent();
         }
-        return "";
+        return keyMap.get("State");
     }
 
     @Override
     public String getTestDataListNodeNodePath(HashMap<String, String> keyMap) {
         setCursorAtNode(keyMap.get("Node Path"));
-        return "";
+        return "Present";
     }
 
     @Override
@@ -91,19 +89,18 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
         } else if (keyMap.get("State").contentEquals("Absent")) {
             Assertions.assertNull(cursor);
         }
-        return "";
+        return keyMap.get("State");
     }
 
     @Override
     public String getTestDataListNodeTestDataName(HashMap<String, String> keyMap) {
-        assertTestDataName(replaceKeyword(keyMap.get("Test Data Name")));
-        return "";
+        return assertTestDataName(replaceKeyword(keyMap.get("Test Data Name")));
     }
 
     @Override
     public String getTestStepContainerListNodeNodePath(HashMap<String, String> keyMap) {
         setCursorAtNode(keyMap.get("Node Path"));
-        return "";
+        return "Present";
     }
 
     @Override
@@ -113,61 +110,53 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
         } else if (keyMap.get("State").contentEquals("Absent")) {
             Assertions.assertNull(cursor);
         }
-        return "";
+        return keyMap.get("State");
     }
 
     @Override
     public String getTestStepContainerListNodeTestCaseName(HashMap<String, String> keyMap) {
-        assertTestStepContainerName(replaceKeyword(keyMap.get("Test Case Name")));
-        return "";
+        return assertTestStepContainerName(replaceKeyword(keyMap.get("Test Case Name")));
     }
 
     @Override
     public String getTestStepContainerListNodeTestSetupName(HashMap<String, String> keyMap) {
-        assertTestStepContainerName(replaceKeyword(keyMap.get("Test Setup Name")));
-        return "";
+        return assertTestStepContainerName(replaceKeyword(keyMap.get("Test Setup Name")));
     }
 
     @Override
     public String getTestStepListNodeAndFullName(HashMap<String, String> keyMap) {
-        assertTestStepFullName(replaceKeyword(keyMap.get("And Full Name")));
-        return "";
+        return assertTestStepFullName(replaceKeyword(keyMap.get("And Full Name")));
     }
 
     @Override
     public String getTestStepListNodeAndStepDefinitionRefName(HashMap<String, String> keyMap) {
-        assertStepDefinitionRefName(replaceKeyword(keyMap.get("And StepDefinitionRef Name")));
-        return "";
+        return assertStepDefinitionRefName(replaceKeyword(keyMap.get("And StepDefinitionRef Name")));
     }
 
     @Override
     public String getTestStepListNodeAndStepObjectRefName(HashMap<String, String> keyMap) {
-        assertStepObjectRefName(replaceKeyword(keyMap.get("And StepObjectRef Name")));
-        return "";
+        return assertStepObjectRefName(replaceKeyword(keyMap.get("And StepObjectRef Name")));
     }
 
     @Override
     public String getTestStepListNodeGivenFullName(HashMap<String, String> keyMap) {
-        assertTestStepFullName(replaceKeyword(keyMap.get("Given Full Name")));
-        return "";
+        return assertTestStepFullName(replaceKeyword(keyMap.get("Given Full Name")));
     }
 
     @Override
     public String getTestStepListNodeGivenStepDefinitionRefName(HashMap<String, String> keyMap) {
-        assertStepDefinitionRefName(replaceKeyword(keyMap.get("Given StepDefinitionRef Name")));
-        return "";
+        return assertStepDefinitionRefName(replaceKeyword(keyMap.get("Given StepDefinitionRef Name")));
     }
 
     @Override
     public String getTestStepListNodeGivenStepObjectRefName(HashMap<String, String> keyMap) {
-        assertStepObjectRefName(replaceKeyword(keyMap.get("Given StepObjectRef Name")));
-        return "";
+        return assertStepObjectRefName(replaceKeyword(keyMap.get("Given StepObjectRef Name")));
     }
 
     @Override
     public String getTestStepListNodeNodePath(HashMap<String, String> keyMap) {
         setCursorAtNode(keyMap.get("Node Path"));
-        return "";
+        return "Present";
     }
 
     @Override
@@ -175,43 +164,37 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
         if (keyMap.get("State").contentEquals("Absent")) {
             assertTestStepListEmpty();
         }
-        return "";
+        return keyMap.get("State");
     }
 
     @Override
     public String getTestStepListNodeThenFullName(HashMap<String, String> keyMap) {
-        assertTestStepFullName(replaceKeyword(keyMap.get("Then Full Name")));
-        return "";
+        return assertTestStepFullName(replaceKeyword(keyMap.get("Then Full Name")));
     }
 
     @Override
     public String getTestStepListNodeThenStepDefinitionRefName(HashMap<String, String> keyMap) {
-        assertStepDefinitionRefName(replaceKeyword(keyMap.get("Then StepDefinitionRef Name")));
-        return "";
+        return assertStepDefinitionRefName(replaceKeyword(keyMap.get("Then StepDefinitionRef Name")));
     }
 
     @Override
     public String getTestStepListNodeThenStepObjectRefName(HashMap<String, String> keyMap) {
-        assertStepObjectRefName(replaceKeyword(keyMap.get("Then StepObjectRef Name")));
-        return "";
+        return assertStepObjectRefName(replaceKeyword(keyMap.get("Then StepObjectRef Name")));
     }
 
     @Override
     public String getTestStepListNodeWhenFullName(HashMap<String, String> keyMap) {
-        assertTestStepFullName(replaceKeyword(keyMap.get("When Full Name")));
-        return "";
+        return assertTestStepFullName(replaceKeyword(keyMap.get("When Full Name")));
     }
 
     @Override
     public String getTestStepListNodeWhenStepDefinitionRefName(HashMap<String, String> keyMap) {
-        assertStepDefinitionRefName(replaceKeyword(keyMap.get("When StepDefinitionRef Name")));
-        return "";
+        return assertStepDefinitionRefName(replaceKeyword(keyMap.get("When StepDefinitionRef Name")));
     }
 
     @Override
     public String getTestStepListNodeWhenStepObjectRefName(HashMap<String, String> keyMap) {
-        assertStepObjectRefName(replaceKeyword(keyMap.get("When StepObjectRef Name")));
-        return "";
+        return assertStepObjectRefName(replaceKeyword(keyMap.get("When StepObjectRef Name")));
     }
 
     @Override
@@ -219,7 +202,7 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
         String path = keyMap.get("Node Path");
         String parentPath = path.substring(0, path.lastIndexOf("/"));
         setCursorAtNode(parentPath);
-        return "";
+        return "Present";
     }
 
     @Override
@@ -229,7 +212,7 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
         } else if (keyMap.get("State").contentEquals("Present")) {
             assertTextPresent();
         }
-        return "";
+        return keyMap.get("State");
     }
 
     @Override
@@ -324,15 +307,14 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
 
     @Override
     public String getTestSuiteName(HashMap<String, String> keyMap) {
-        assertTestSuiteName(replaceKeyword(keyMap.get("Test Suite Name")));
-        return "";
+        return assertTestSuiteName(replaceKeyword(keyMap.get("Test Suite Name")));
     }
 
     @Override
     public String getCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "";
+        return "Present";
     }
 
     @Override
@@ -344,7 +326,7 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     public String getTextNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "";
+        return "Present";
     }
 
     @Override
@@ -356,21 +338,21 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     public String getCellListNodeCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "";
+        return "Present";
     }
 
     @Override
     public String getDescriptionNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "";
+        return "Present";
     }
 
     @Override
     public String getNestedDescriptionNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "";
+        return "Present";
     }
 
     @Override
@@ -382,7 +364,7 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     public String getRowListNodeCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "";
+        return "Present";
     }
 
     @Override
@@ -394,7 +376,7 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     public String getTableNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "";
+        return "Present";
     }
 
     @Override
@@ -406,14 +388,14 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     public String getTestDataListNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "";
+        return "Present";
     }
 
     @Override
     public String getTestDataListNodeCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "";
+        return "Present";
     }
 
     @Override
@@ -425,14 +407,14 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     public String getTestStepContainerListNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "";
+        return "Present";
     }
 
     @Override
     public String getTestStepContainerListNodeCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "";
+        return "Present";
     }
 
     @Override
@@ -444,14 +426,14 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     public String getTestStepListNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "";
+        return "Present";
     }
 
     @Override
     public String getTestStepListNodeCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "";
+        return "Present";
     }
 
     @Override

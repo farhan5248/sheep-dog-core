@@ -24,7 +24,7 @@ public class ListProposalsPopupImpl extends TestObjectIDE implements ListProposa
         for (SheepDogIssueProposal p : TestObject.listProposalsDialog) {
             if (p.getId().equals(keyMap.get("Proposal Id"))
                     && p.getValue().toString().contentEquals(keyMap.get("Proposal Value"))) {
-                return "";
+                return p.getValue().toString();
             }
         }
         StringBuilder sb = new StringBuilder();
@@ -40,7 +40,7 @@ public class ListProposalsPopupImpl extends TestObjectIDE implements ListProposa
         for (SheepDogIssueProposal p : TestObject.listProposalsDialog) {
             if (p.getId().equals(keyMap.get("Proposal Id"))
                     && p.getDescription().contentEquals(replaceKeyword(keyMap.get("Proposal Description")))) {
-                return "";
+                return p.getDescription();
             }
         }
         StringBuilder sb = new StringBuilder();
@@ -55,7 +55,7 @@ public class ListProposalsPopupImpl extends TestObjectIDE implements ListProposa
     public String getProposalId(HashMap<String, String> keyMap) {
         for (SheepDogIssueProposal p : TestObject.listProposalsDialog) {
             if (p.getId().equals(keyMap.get("Proposal Id"))) {
-                return "";
+                return p.getId();
             }
         }
         StringBuilder sb = new StringBuilder();

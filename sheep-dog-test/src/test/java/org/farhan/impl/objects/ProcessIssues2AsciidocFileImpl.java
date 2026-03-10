@@ -12,14 +12,13 @@ public class ProcessIssues2AsciidocFileImpl extends TestObjectIDE implements Pro
 
     @Override
     public String getTestSuiteName(HashMap<String, String> keyMap) {
-        assertTestSuiteName(replaceKeyword(keyMap.get("Test Suite Name")));
-        return "";
+        return assertTestSuiteName(replaceKeyword(keyMap.get("Test Suite Name")));
     }
 
     @Override
     public String getCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
         Assertions.assertNotNull(cursor);
-        return "";
+        return "Present";
     }
 }
