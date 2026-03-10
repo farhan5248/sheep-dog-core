@@ -1,6 +1,5 @@
 package org.farhan.common;
 
-import java.util.ArrayList;
 import org.farhan.dsl.grammar.ICell;
 import org.farhan.dsl.grammar.IDescription;
 import org.farhan.dsl.grammar.ILine;
@@ -19,13 +18,8 @@ import org.farhan.dsl.grammar.ITestStepContainer;
 import org.farhan.dsl.grammar.ITestSuite;
 import org.farhan.dsl.grammar.IText;
 import org.farhan.dsl.grammar.SheepDogBuilder;
-import org.farhan.dsl.grammar.SheepDogIssueProposal;
 
 public class TestObjectIDE extends TestObjectDoc {
-
-    public static ArrayList<SheepDogIssueProposal> listProposalsDialog = new ArrayList<SheepDogIssueProposal>();
-    public static ArrayList<SheepDogIssueProposal> listQuickfixesDialog = new ArrayList<SheepDogIssueProposal>();
-    public static String validateDialog = "";
 
     protected static Object getDocumentFromNode(Object node) {
         Object current = node;
@@ -59,14 +53,6 @@ public class TestObjectIDE extends TestObjectDoc {
             }
         }
         return current;
-    }
-
-    public static void reset() {
-        testProject = SheepDogBuilder.createTestProject();
-        cursor = testProject;
-        validateDialog = "";
-        listProposalsDialog = new ArrayList<SheepDogIssueProposal>();
-        listQuickfixesDialog = new ArrayList<SheepDogIssueProposal>();
     }
 
     private Object getChildNode(Object parent, String elementType, int index) {

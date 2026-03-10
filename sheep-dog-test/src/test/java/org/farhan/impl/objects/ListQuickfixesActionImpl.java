@@ -2,6 +2,7 @@ package org.farhan.impl.objects;
 
 import java.util.HashMap;
 
+import org.farhan.common.TestObject;
 import org.farhan.common.TestObjectIDE;
 import org.farhan.dsl.grammar.ICell;
 import org.farhan.dsl.grammar.IRow;
@@ -36,52 +37,52 @@ public class ListQuickfixesActionImpl extends TestObjectIDE implements ListQuick
             properties.remove("Node Path");
         }
         try {
-            if (TestObjectIDE.cursor instanceof ICell) {
-                ICell cell = (ICell) TestObjectIDE.cursor;
-                if (TestObjectIDE.validateDialog.contentEquals(CellIssueTypes.CELL_NAME_ONLY.description)) {
-                    TestObjectIDE.listQuickfixesDialog.addAll(CellIssueResolver.correctNameOnly(cell));
+            if (TestObject.cursor instanceof ICell) {
+                ICell cell = (ICell) TestObject.cursor;
+                if (TestObject.validateDialog.contentEquals(CellIssueTypes.CELL_NAME_ONLY.description)) {
+                    TestObject.listQuickfixesDialog.addAll(CellIssueResolver.correctNameOnly(cell));
                 }
-            } else if (TestObjectIDE.cursor instanceof IRow) {
-                IRow row = (IRow) TestObjectIDE.cursor;
+            } else if (TestObject.cursor instanceof IRow) {
+                IRow row = (IRow) TestObject.cursor;
                 ITestStep testStep = (ITestStep) row.getParent().getParent();
-                if (TestObjectIDE.validateDialog.contentEquals(RowIssueTypes.ROW_CELL_LIST_WORKSPACE.description)) {
+                if (TestObject.validateDialog.contentEquals(RowIssueTypes.ROW_CELL_LIST_WORKSPACE.description)) {
                     if (testStep.getTable() != null) {
                         if (testStep.getTable().getRowList() != null) {
                             if (testStep.getTable().getRowList().getFirst() != null) {
-                                TestObjectIDE.listQuickfixesDialog
+                                TestObject.listQuickfixesDialog
                                         .addAll(RowIssueResolver.correctCellListWorkspace(testStep));
                             }
                         }
                     }
                 }
-            } else if (TestObjectIDE.cursor instanceof IText) {
-                IText text = (IText) TestObjectIDE.cursor;
+            } else if (TestObject.cursor instanceof IText) {
+                IText text = (IText) TestObject.cursor;
                 ITestStep testStep = (ITestStep) text.getParent();
-                if (TestObjectIDE.validateDialog.contentEquals(TextIssueTypes.TEXT_NAME_WORKSPACE.description)) {
-                    TestObjectIDE.listQuickfixesDialog.addAll(TextIssueResolver.correctNameWorkspace(testStep));
+                if (TestObject.validateDialog.contentEquals(TextIssueTypes.TEXT_NAME_WORKSPACE.description)) {
+                    TestObject.listQuickfixesDialog.addAll(TextIssueResolver.correctNameWorkspace(testStep));
                 }
-            } else if (TestObjectIDE.cursor instanceof ITestStep) {
-                ITestStep testStep = (ITestStep) TestObjectIDE.cursor;
-                if (TestObjectIDE.validateDialog
+            } else if (TestObject.cursor instanceof ITestStep) {
+                ITestStep testStep = (ITestStep) TestObject.cursor;
+                if (TestObject.validateDialog
                         .contentEquals(TestStepIssueTypes.TEST_STEP_STEP_DEFINITION_NAME_WORKSPACE.description)) {
-                    TestObjectIDE.listQuickfixesDialog
+                    TestObject.listQuickfixesDialog
                             .addAll(TestStepIssueResolver.correctStepDefinitionNameWorkspace(testStep));
-                } else if (TestObjectIDE.validateDialog
+                } else if (TestObject.validateDialog
                         .contentEquals(TestStepIssueTypes.TEST_STEP_STEP_OBJECT_NAME_WORKSPACE.description)) {
-                    TestObjectIDE.listQuickfixesDialog
+                    TestObject.listQuickfixesDialog
                             .addAll(TestStepIssueResolver.correctStepObjectNameWorkspace(testStep));
                 }
-            } else if (TestObjectIDE.cursor instanceof ITestStepContainer) {
-                ITestStepContainer testStepContainer = (ITestStepContainer) TestObjectIDE.cursor;
-                if (TestObjectIDE.validateDialog
+            } else if (TestObject.cursor instanceof ITestStepContainer) {
+                ITestStepContainer testStepContainer = (ITestStepContainer) TestObject.cursor;
+                if (TestObject.validateDialog
                         .contentEquals(TestStepContainerIssueTypes.TEST_STEP_CONTAINER_NAME_ONLY.description)) {
-                    TestObjectIDE.listQuickfixesDialog
+                    TestObject.listQuickfixesDialog
                             .addAll(TestStepContainerIssueResolver.correctNameOnly(testStepContainer));
                 }
-            } else if (TestObjectIDE.cursor instanceof ITestSuite) {
-                ITestSuite testSuite = (ITestSuite) TestObjectIDE.cursor;
-                if (TestObjectIDE.validateDialog.contentEquals(TestSuiteIssueTypes.TEST_SUITE_NAME_ONLY.description)) {
-                    TestObjectIDE.listQuickfixesDialog.addAll(TestSuiteIssueResolver.correctNameOnly(testSuite));
+            } else if (TestObject.cursor instanceof ITestSuite) {
+                ITestSuite testSuite = (ITestSuite) TestObject.cursor;
+                if (TestObject.validateDialog.contentEquals(TestSuiteIssueTypes.TEST_SUITE_NAME_ONLY.description)) {
+                    TestObject.listQuickfixesDialog.addAll(TestSuiteIssueResolver.correctNameOnly(testSuite));
                 }
             } else {
                 Assertions.fail("Unknown Element Type");

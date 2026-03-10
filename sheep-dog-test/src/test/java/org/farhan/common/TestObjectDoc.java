@@ -10,7 +10,6 @@ import org.farhan.dsl.grammar.IStepParameters;
 import org.farhan.dsl.grammar.ITable;
 import org.farhan.dsl.grammar.ITestCase;
 import org.farhan.dsl.grammar.ITestData;
-import org.farhan.dsl.grammar.ITestProject;
 import org.farhan.dsl.grammar.ITestStep;
 import org.farhan.dsl.grammar.ITestStepContainer;
 import org.farhan.dsl.grammar.ITestSuite;
@@ -18,9 +17,6 @@ import org.farhan.dsl.grammar.SheepDogBuilder;
 import org.junit.jupiter.api.Assertions;
 
 public class TestObjectDoc extends TestObject {
-
-    protected static Object cursor;
-    protected static ITestProject testProject;
 
     protected void addCellWithName(String name) {
         if (cursor instanceof ICell) {

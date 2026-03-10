@@ -2,6 +2,7 @@ package org.farhan.impl.objects;
 
 import java.util.HashMap;
 
+import org.farhan.common.TestObject;
 import org.farhan.common.TestObjectIDE;
 import org.farhan.dsl.grammar.IRow;
 import org.farhan.dsl.grammar.ITestStep;
@@ -22,16 +23,16 @@ public class ListProposalsActionImpl extends TestObjectIDE implements ListPropos
             properties.remove("Node Path");
         }
         try {
-            if (TestObjectIDE.cursor instanceof IRow) {
-                IRow row = (IRow) TestObjectIDE.cursor;
+            if (TestObject.cursor instanceof IRow) {
+                IRow row = (IRow) TestObject.cursor;
                 ITestStep testStep = (ITestStep) row.getParent().getParent();
-                TestObjectIDE.listProposalsDialog
+                TestObject.listProposalsDialog
                         .addAll(RowIssueResolver.suggestCellListWorkspace((ITestStep) testStep));
-            } else if (TestObjectIDE.cursor instanceof ITestStep) {
-                TestObjectIDE.listProposalsDialog
-                        .addAll(TestStepIssueResolver.suggestStepObjectNameWorkspace((ITestStep) TestObjectIDE.cursor));
-                TestObjectIDE.listProposalsDialog.addAll(
-                        TestStepIssueResolver.suggestStepDefinitionNameWorkspace((ITestStep) TestObjectIDE.cursor));
+            } else if (TestObject.cursor instanceof ITestStep) {
+                TestObject.listProposalsDialog
+                        .addAll(TestStepIssueResolver.suggestStepObjectNameWorkspace((ITestStep) TestObject.cursor));
+                TestObject.listProposalsDialog.addAll(
+                        TestStepIssueResolver.suggestStepDefinitionNameWorkspace((ITestStep) TestObject.cursor));
             } else {
                 Assertions.fail("Unknown Element Type");
             }

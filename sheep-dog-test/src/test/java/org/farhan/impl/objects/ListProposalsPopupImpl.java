@@ -2,6 +2,7 @@ package org.farhan.impl.objects;
 
 import java.util.HashMap;
 
+import org.farhan.common.TestObject;
 import org.farhan.common.TestObjectIDE;
 import org.farhan.dsl.grammar.SheepDogIssueProposal;
 import org.farhan.objects.xtext.ListProposalsPopup;
@@ -14,12 +15,12 @@ public class ListProposalsPopupImpl extends TestObjectIDE implements ListProposa
 
     @Override
     public void assertEmpty(HashMap<String, String> keyMap) {
-        Assertions.assertTrue(TestObjectIDE.listProposalsDialog.isEmpty());
+        Assertions.assertTrue(TestObject.listProposalsDialog.isEmpty());
     }
 
     @Override
     public void assertProposalValue(HashMap<String, String> keyMap) {
-        for (SheepDogIssueProposal p : TestObjectIDE.listProposalsDialog) {
+        for (SheepDogIssueProposal p : TestObject.listProposalsDialog) {
             if (p.getId().equals(keyMap.get("Proposal Id"))
                     && p.getValue().toString().contentEquals(keyMap.get("Proposal Value"))) {
                 return;
@@ -28,13 +29,13 @@ public class ListProposalsPopupImpl extends TestObjectIDE implements ListProposa
         StringBuilder sb = new StringBuilder();
         sb.append("No proposal found with ID that matches the name: ").append(keyMap.get("Proposal Id"));
         sb.append(" and value: ").append(keyMap.get("Proposal Value"));
-        sb.append(listToString(TestObjectIDE.listProposalsDialog));
+        sb.append(listToString(TestObject.listProposalsDialog));
         Assertions.fail(sb.toString());
     }
 
     @Override
     public void assertProposalDescription(HashMap<String, String> keyMap) {
-        for (SheepDogIssueProposal p : TestObjectIDE.listProposalsDialog) {
+        for (SheepDogIssueProposal p : TestObject.listProposalsDialog) {
             if (p.getId().equals(keyMap.get("Proposal Id"))
                     && p.getDescription().contentEquals(replaceKeyword(keyMap.get("Proposal Description")))) {
                 return;
@@ -43,20 +44,20 @@ public class ListProposalsPopupImpl extends TestObjectIDE implements ListProposa
         StringBuilder sb = new StringBuilder();
         sb.append("No proposal found with ID that matches the name: ").append(keyMap.get("Proposal Id"));
         sb.append(" and description: ").append(replaceKeyword(keyMap.get("Proposal Description")));
-        sb.append(listToString(TestObjectIDE.listProposalsDialog));
+        sb.append(listToString(TestObject.listProposalsDialog));
         Assertions.fail(sb.toString());
     }
 
     @Override
     public void assertProposalId(HashMap<String, String> keyMap) {
-        for (SheepDogIssueProposal p : TestObjectIDE.listProposalsDialog) {
+        for (SheepDogIssueProposal p : TestObject.listProposalsDialog) {
             if (p.getId().equals(keyMap.get("Proposal Id"))) {
                 return;
             }
         }
         StringBuilder sb = new StringBuilder();
         sb.append("No proposal found with ID that matches the name: ").append(keyMap.get("Proposal Id"));
-        sb.append(listToString(TestObjectIDE.listProposalsDialog));
+        sb.append(listToString(TestObject.listProposalsDialog));
         Assertions.fail(sb.toString());
     }
 
