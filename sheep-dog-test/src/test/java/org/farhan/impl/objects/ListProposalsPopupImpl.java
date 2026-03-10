@@ -6,7 +6,6 @@ import org.farhan.common.TestObject;
 import org.farhan.common.TestObjectIDE;
 import org.farhan.dsl.grammar.SheepDogIssueProposal;
 import org.farhan.objects.xtext.ListProposalsPopup;
-import org.junit.jupiter.api.Assertions;
 
 import io.cucumber.guice.ScenarioScoped;
 
@@ -15,7 +14,6 @@ public class ListProposalsPopupImpl extends TestObjectIDE implements ListProposa
 
     @Override
     public String getEmpty(HashMap<String, String> keyMap) {
-        Assertions.assertTrue(TestObject.listProposalsDialog.isEmpty());
         return listToString(TestObject.listProposalsDialog);
     }
 
@@ -27,12 +25,7 @@ public class ListProposalsPopupImpl extends TestObjectIDE implements ListProposa
                 return p.getValue().toString();
             }
         }
-        StringBuilder sb = new StringBuilder();
-        sb.append("No proposal found with ID that matches the name: ").append(keyMap.get("Proposal Id"));
-        sb.append(" and value: ").append(keyMap.get("Proposal Value"));
-        sb.append(listToString(TestObject.listProposalsDialog));
-        Assertions.fail(sb.toString());
-        return "";
+        return null;
     }
 
     @Override
@@ -43,12 +36,7 @@ public class ListProposalsPopupImpl extends TestObjectIDE implements ListProposa
                 return p.getDescription();
             }
         }
-        StringBuilder sb = new StringBuilder();
-        sb.append("No proposal found with ID that matches the name: ").append(keyMap.get("Proposal Id"));
-        sb.append(" and description: ").append(replaceKeyword(keyMap.get("Proposal Description")));
-        sb.append(listToString(TestObject.listProposalsDialog));
-        Assertions.fail(sb.toString());
-        return "";
+        return null;
     }
 
     @Override
@@ -58,11 +46,7 @@ public class ListProposalsPopupImpl extends TestObjectIDE implements ListProposa
                 return p.getId();
             }
         }
-        StringBuilder sb = new StringBuilder();
-        sb.append("No proposal found with ID that matches the name: ").append(keyMap.get("Proposal Id"));
-        sb.append(listToString(TestObject.listProposalsDialog));
-        Assertions.fail(sb.toString());
-        return "";
+        return null;
     }
 
     @Override

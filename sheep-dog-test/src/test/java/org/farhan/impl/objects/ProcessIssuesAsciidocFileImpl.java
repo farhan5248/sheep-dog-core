@@ -10,7 +10,6 @@ import org.farhan.dsl.grammar.ITestStepContainer;
 import org.farhan.dsl.grammar.ITestSuite;
 import org.farhan.dsl.grammar.IText;
 import org.farhan.objects.specprj.src.test.resources.asciidoc.specs.ProcessIssuesAsciidocFile;
-import org.junit.jupiter.api.Assertions;
 
 import io.cucumber.guice.ScenarioScoped;
 
@@ -37,9 +36,6 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public String getDescriptionNodeState(HashMap<String, String> keyMap) {
         IDescription desc = getDescriptionFromCursor();
-        if (keyMap.get("State").contentEquals("Absent")) {
-            assertDescriptionEmpty();
-        }
         return desc == null ? null : desc.toString();
     }
 
@@ -52,9 +48,6 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public String getNestedDescriptionNodeState(HashMap<String, String> keyMap) {
         IDescription desc = getDescriptionFromCursor();
-        if (keyMap.get("State").contentEquals("Absent")) {
-            assertDescriptionEmpty();
-        }
         return desc == null ? null : desc.toString();
     }
 
@@ -78,11 +71,6 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public String getTableNodeState(HashMap<String, String> keyMap) {
         ITable table = getTableFromCursor();
-        if (keyMap.get("State").contentEquals("Absent")) {
-            assertTableAbsent();
-        } else if (keyMap.get("State").contentEquals("Present")) {
-            assertTablePresent();
-        }
         return table == null ? null : table.toString();
     }
 
@@ -95,11 +83,7 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public String getTestDataListNodeState(HashMap<String, String> keyMap) {
         if (cursor == null) return null;
-        String actual = listToString(((ITestCase) cursor).getTestDataList());
-        if (keyMap.get("State").contentEquals("Empty")) {
-            assertTestDataListEmpty();
-        }
-        return actual;
+        return listToString(((ITestCase) cursor).getTestDataList());
     }
 
     @Override
@@ -116,11 +100,7 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public String getTestStepContainerListNodeState(HashMap<String, String> keyMap) {
         if (cursor == null) return null;
-        String actual = listToString(((ITestSuite) cursor).getTestStepContainerList());
-        if (keyMap.get("State").contentEquals("Empty")) {
-            assertTestStepContainerListEmpty();
-        }
-        return actual;
+        return listToString(((ITestSuite) cursor).getTestStepContainerList());
     }
 
     @Override
@@ -171,11 +151,7 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
 
     @Override
     public String getTestStepListNodeState(HashMap<String, String> keyMap) {
-        String actual = listToString(((ITestStepContainer) cursor).getTestStepList());
-        if (keyMap.get("State").contentEquals("Absent")) {
-            assertTestStepListEmpty();
-        }
-        return actual;
+        return listToString(((ITestStepContainer) cursor).getTestStepList());
     }
 
     @Override
@@ -219,11 +195,6 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public String getTextNodeState(HashMap<String, String> keyMap) {
         IText text = ((ITestStep) cursor).getText();
-        if (keyMap.get("State").contentEquals("Absent")) {
-            assertTextAbsent();
-        } else if (keyMap.get("State").contentEquals("Present")) {
-            assertTextPresent();
-        }
         return text == null ? null : text.toString();
     }
 
@@ -325,7 +296,6 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public String getCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
-        Assertions.assertNotNull(cursor);
         return cursor == null ? null : cursor.toString();
     }
 
@@ -337,7 +307,6 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public String getTextNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
-        Assertions.assertNotNull(cursor);
         return cursor == null ? null : cursor.toString();
     }
 
@@ -349,21 +318,18 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public String getCellListNodeCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
-        Assertions.assertNotNull(cursor);
         return cursor == null ? null : cursor.toString();
     }
 
     @Override
     public String getDescriptionNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
-        Assertions.assertNotNull(cursor);
         return cursor == null ? null : cursor.toString();
     }
 
     @Override
     public String getNestedDescriptionNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
-        Assertions.assertNotNull(cursor);
         return cursor == null ? null : cursor.toString();
     }
 
@@ -375,7 +341,6 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public String getRowListNodeCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
-        Assertions.assertNotNull(cursor);
         return cursor == null ? null : cursor.toString();
     }
 
@@ -387,7 +352,6 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public String getTableNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
-        Assertions.assertNotNull(cursor);
         return cursor == null ? null : cursor.toString();
     }
 
@@ -399,14 +363,12 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public String getTestDataListNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
-        Assertions.assertNotNull(cursor);
         return cursor == null ? null : cursor.toString();
     }
 
     @Override
     public String getTestDataListNodeCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
-        Assertions.assertNotNull(cursor);
         return cursor == null ? null : cursor.toString();
     }
 
@@ -418,14 +380,12 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public String getTestStepContainerListNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
-        Assertions.assertNotNull(cursor);
         return cursor == null ? null : cursor.toString();
     }
 
     @Override
     public String getTestStepContainerListNodeCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
-        Assertions.assertNotNull(cursor);
         return cursor == null ? null : cursor.toString();
     }
 
@@ -437,14 +397,12 @@ public class ProcessIssuesAsciidocFileImpl extends TestObjectIDE implements Proc
     @Override
     public String getTestStepListNodeAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
-        Assertions.assertNotNull(cursor);
         return cursor == null ? null : cursor.toString();
     }
 
     @Override
     public String getTestStepListNodeCreatedAsFollows(HashMap<String, String> keyMap) {
         cursor = testProject.getTestDocument(getFullNameFromPath());
-        Assertions.assertNotNull(cursor);
         return cursor == null ? null : cursor.toString();
     }
 

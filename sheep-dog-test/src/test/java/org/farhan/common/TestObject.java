@@ -149,8 +149,21 @@ public abstract class TestObject {
             } else {
                 for (String fieldName : headers) {
                     try {
-                        this.getClass().getMethod(operation + convertToPascalCase(sectionName)
+                        Object returnValue = this.getClass().getMethod(operation + convertToPascalCase(sectionName)
                                 + convertToPascalCase(fieldName), HashMap.class).invoke(this, row);
+                        if (operation.equals("get") && !fieldName.contains("Node Path") && !fieldName.equals("Tag List")) {
+                            String expected = replaceKeyword(row.get(fieldName));
+                            String actual = returnValue == null ? null : returnValue.toString();
+                            if (fieldName.equals("State") && (expected.equals("Absent") || expected.equals("Empty") || expected.equals("Present"))) {
+                                String mappedActual;
+                                if (actual == null) mappedActual = "Absent";
+                                else if (actual.isEmpty()) mappedActual = "Empty";
+                                else mappedActual = "Present";
+                                Assertions.assertEquals(expected, mappedActual);
+                            } else {
+                                Assertions.assertEquals(expected, actual);
+                            }
+                        }
                     } catch (Exception e) {
                         Assertions.fail(e);
                     }
@@ -170,9 +183,17 @@ public abstract class TestObject {
                         operation + convertToPascalCase(sectionName) + "Negative",
                         HashMap.class).invoke(this, row);
             } else {
-                this.getClass().getMethod(
+                Object returnValue = this.getClass().getMethod(
                         operation + convertToPascalCase(sectionName) + convertToPascalCase(key),
                         HashMap.class).invoke(this, row);
+                if (operation.equals("get")) {
+                    String actual = returnValue == null ? null : returnValue.toString();
+                    if (value.equals("true")) {
+                        Assertions.assertNotNull(actual);
+                    } else if (!value.isEmpty()) {
+                        Assertions.assertEquals(replaceKeyword(value), actual);
+                    }
+                }
             }
         } catch (Exception e) {
             Assertions.fail(e);

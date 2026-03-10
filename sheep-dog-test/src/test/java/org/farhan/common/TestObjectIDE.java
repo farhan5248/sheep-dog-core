@@ -138,13 +138,10 @@ public class TestObjectIDE extends TestObject {
 
     protected String assertCellName(String name) {
         if (cursor instanceof ICell) {
-            String actual = ((ICell) cursor).getName();
-            Assertions.assertEquals(name, actual);
-            return actual;
+            return ((ICell) cursor).getName();
         } else {
             cursor = ((IRow) cursor).getCell(name);
-            Assertions.assertNotNull(cursor);
-            return ((ICell) cursor).getName();
+            return cursor == null ? null : ((ICell) cursor).getName();
         }
     }
 
@@ -167,20 +164,16 @@ public class TestObjectIDE extends TestObject {
 
     protected String assertLineContent(String content) {
         if (cursor instanceof ILine) {
-            String actual = ((ILine) cursor).getName();
-            Assertions.assertEquals(content, actual);
-            return actual;
+            return ((ILine) cursor).getName();
         } else {
             cursor = ((IDescription) cursor).getLine(content);
-            Assertions.assertNotNull(cursor);
-            return ((ILine) cursor).getName();
+            return cursor == null ? null : ((ILine) cursor).getName();
         }
     }
 
     protected String assertRowContent(String content) {
         cursor = ((IRow) cursor).getCell(content);
-        Assertions.assertNotNull(cursor);
-        return ((ICell) cursor).getName();
+        return cursor == null ? null : ((ICell) cursor).getName();
     }
 
     protected void assertStepDefinitionListEmpty() {
@@ -189,20 +182,15 @@ public class TestObjectIDE extends TestObject {
 
     protected String assertStepDefinitionName(String name) {
         if (cursor instanceof IStepDefinition) {
-            String actual = ((IStepDefinition) cursor).getName();
-            Assertions.assertEquals(name, actual);
-            return actual;
+            return ((IStepDefinition) cursor).getName();
         } else {
             cursor = ((IStepObject) cursor).getStepDefinition(name);
-            Assertions.assertNotNull(cursor);
-            return ((IStepDefinition) cursor).getName();
+            return cursor == null ? null : ((IStepDefinition) cursor).getName();
         }
     }
 
     protected String assertStepObjectName(String name) {
-        String actual = ((IStepObject) cursor).getName();
-        Assertions.assertEquals(name, actual);
-        return actual;
+        return ((IStepObject) cursor).getName();
     }
 
     protected void assertStepParametersListEmpty() {
@@ -211,13 +199,10 @@ public class TestObjectIDE extends TestObject {
 
     protected String assertStepParametersName(String name) {
         if (cursor instanceof IStepParameters) {
-            String actual = ((IStepParameters) cursor).getName();
-            Assertions.assertEquals(name, actual);
-            return actual;
+            return ((IStepParameters) cursor).getName();
         } else {
             cursor = ((IStepDefinition) cursor).getStepParameters(name);
-            Assertions.assertNotNull(cursor);
-            return ((IStepParameters) cursor).getName();
+            return cursor == null ? null : ((IStepParameters) cursor).getName();
         }
     }
 
@@ -240,13 +225,10 @@ public class TestObjectIDE extends TestObject {
 
     protected String assertTestDataName(String name) {
         if (cursor instanceof ITestData) {
-            String actual = ((ITestData) cursor).getName();
-            Assertions.assertEquals(name, actual);
-            return actual;
+            return ((ITestData) cursor).getName();
         } else {
             cursor = ((ITestCase) cursor).getTestData(name);
-            Assertions.assertNotNull(cursor);
-            return ((ITestData) cursor).getName();
+            return cursor == null ? null : ((ITestData) cursor).getName();
         }
     }
 
@@ -256,20 +238,15 @@ public class TestObjectIDE extends TestObject {
 
     protected String assertTestStepContainerName(String name) {
         if (cursor instanceof ITestStepContainer) {
-            String actual = ((ITestStepContainer) cursor).getName();
-            Assertions.assertEquals(name, actual);
-            return actual;
+            return ((ITestStepContainer) cursor).getName();
         } else {
             cursor = ((ITestSuite) cursor).getTestStepContainer(name);
-            Assertions.assertNotNull(cursor);
-            return ((ITestStepContainer) cursor).getName();
+            return cursor == null ? null : ((ITestStepContainer) cursor).getName();
         }
     }
 
     protected String assertTestStepFullName(String fullName) {
-        String actual = ((ITestStep) cursor).getFullName();
-        Assertions.assertEquals(fullName, actual);
-        return actual;
+        return ((ITestStep) cursor).getFullName();
     }
 
     protected void assertTestStepListEmpty() {
@@ -277,21 +254,15 @@ public class TestObjectIDE extends TestObject {
     }
 
     protected String assertStepDefinitionRefName(String name) {
-        String actual = ((ITestStep) cursor).getStepDefinitionName();
-        Assertions.assertEquals(name, actual);
-        return actual;
+        return ((ITestStep) cursor).getStepDefinitionName();
     }
 
     protected String assertStepObjectRefName(String name) {
-        String actual = ((ITestStep) cursor).getStepObjectName();
-        Assertions.assertEquals(name, actual);
-        return actual;
+        return ((ITestStep) cursor).getStepObjectName();
     }
 
     protected String assertTestSuiteName(String name) {
-        String actual = ((ITestSuite) cursor).getName();
-        Assertions.assertEquals(name, actual);
-        return actual;
+        return ((ITestSuite) cursor).getName();
     }
 
     protected void assertTextAbsent() {

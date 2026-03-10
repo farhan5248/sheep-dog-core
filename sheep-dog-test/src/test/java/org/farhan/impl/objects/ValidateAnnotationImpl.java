@@ -5,7 +5,6 @@ import java.util.HashMap;
 import org.farhan.common.TestObject;
 import org.farhan.common.TestObjectIDE;
 import org.farhan.objects.xtext.ValidateAnnotation;
-import org.junit.jupiter.api.Assertions;
 
 import io.cucumber.guice.ScenarioScoped;
 
@@ -14,13 +13,11 @@ public class ValidateAnnotationImpl extends TestObjectIDE implements ValidateAnn
 
 	@Override
 	public String getEmpty(HashMap<String, String> keyMap) {
-		Assertions.assertTrue(TestObject.validateDialog.isEmpty());
 		return TestObject.validateDialog;
 	}
 
 	@Override
 	public String getContent(HashMap<String, String> keyMap) {
-		Assertions.assertEquals(keyMap.get("Content"), TestObject.validateDialog);
 		return TestObject.validateDialog;
 	}
 

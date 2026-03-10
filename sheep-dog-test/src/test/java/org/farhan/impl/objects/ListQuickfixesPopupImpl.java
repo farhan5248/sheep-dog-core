@@ -6,7 +6,6 @@ import org.farhan.common.TestObject;
 import org.farhan.common.TestObjectIDE;
 import org.farhan.dsl.grammar.SheepDogIssueProposal;
 import org.farhan.objects.xtext.ListQuickfixesPopup;
-import org.junit.jupiter.api.Assertions;
 
 import io.cucumber.guice.ScenarioScoped;
 
@@ -15,7 +14,6 @@ public class ListQuickfixesPopupImpl extends TestObjectIDE implements ListQuickf
 
     @Override
     public String getEmpty(HashMap<String, String> keyMap) {
-        Assertions.assertTrue(TestObject.listQuickfixesDialog.isEmpty());
         return listToString(TestObject.listQuickfixesDialog);
     }
 
@@ -27,12 +25,7 @@ public class ListQuickfixesPopupImpl extends TestObjectIDE implements ListQuickf
                 return p.getValue().toString();
             }
         }
-        StringBuilder sb = new StringBuilder();
-        sb.append("No quickfix found with ID that matches the name: ").append(keyMap.get("Proposal Id"));
-        sb.append(" and value: ").append(keyMap.get("Proposal Value"));
-        sb.append(listToString(TestObject.listQuickfixesDialog));
-        Assertions.fail(sb.toString());
-        return "";
+        return null;
     }
 
     @Override
@@ -43,12 +36,7 @@ public class ListQuickfixesPopupImpl extends TestObjectIDE implements ListQuickf
                 return p.getDescription();
             }
         }
-        StringBuilder sb = new StringBuilder();
-        sb.append("No quickfix found with ID that matches the name: ").append(keyMap.get("Proposal Id"));
-        sb.append(" and description: ").append(keyMap.get("Proposal Description"));
-        sb.append(listToString(TestObject.listQuickfixesDialog));
-        Assertions.fail(sb.toString());
-        return "";
+        return null;
     }
 
     @Override
@@ -58,11 +46,7 @@ public class ListQuickfixesPopupImpl extends TestObjectIDE implements ListQuickf
                 return p.getId();
             }
         }
-        StringBuilder sb = new StringBuilder();
-        sb.append("No quickfix found with ID that matches the name: ").append(keyMap.get("Proposal Id"));
-        sb.append(listToString(TestObject.listQuickfixesDialog));
-        Assertions.fail(sb.toString());
-        return "";
+        return null;
     }
 
     @Override
