@@ -2,8 +2,8 @@
 
 **References**
 
-1. `sheep-dog-main/site/impl/impl-logging.md` - SLF4J logging patterns
-2. `sheep-dog-main/site/impl/impl-xtext-logging.md` - Xtext logging patterns
+1. `sheep-dog-specs/site/impl/impl-logging.md` - SLF4J logging patterns
+2. `sheep-dog-specs/site/impl/impl-xtext-logging.md` - Xtext logging patterns
 
 ## All
 

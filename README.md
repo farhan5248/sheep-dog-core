@@ -1,6 +1,10 @@
 # Sheep Dog Core
 
-Core libraries for AsciiDoc-to-UML transformation and Cucumber code generation.
+The transformation engine at the heart of the sheep-dog ecosystem. Xtext-based parsers convert AsciiDoc specifications and Cucumber features into UML models and back, enabling bidirectional round-trip engineering between documentation and test code.
+
+```
+AsciiDoc <-> UML Model <-> Cucumber/JUnit
+```
 
 ## Projects
 

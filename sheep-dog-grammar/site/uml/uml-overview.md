@@ -2,9 +2,9 @@
 
 **References**
 
-1. `sheep-dog-main/site/impl/impl-slf4j.md` - **SLF4j** specific rules
-2. `sheep-dog-main/site/arch/arch-logging.md` - General logging patterns
-3. `sheep-dog-main/site/impl/impl-xtext.md` - Xtext domain terminology and pattern variables
+1. `sheep-dog-specs/site/impl/impl-slf4j.md` - **SLF4j** specific rules
+2. `sheep-dog-specs/site/arch/arch-logging.md` - General logging patterns
+3. `sheep-dog-specs/site/impl/impl-xtext.md` - Xtext domain terminology and pattern variables
 
 ## Pattern Variables
 
