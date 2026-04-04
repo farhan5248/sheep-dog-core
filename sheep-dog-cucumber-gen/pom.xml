@@ -15,7 +15,7 @@
 	</properties>
 
 	<scm>
-		<connection>scm:git:https://github.com/farhan5248/sheep-dog-local</connection>
+		<connection>scm:git:https://github.com/farhan5248/sheep-dog-core</connection>
 		<tag>HEAD</tag>
 	</scm>
 
@@ -40,6 +40,16 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</pluginRepository>
+		<pluginRepository>
+			<id>github-main</id>
+			<url>https://maven.pkg.github.com/farhan5248/sheep-dog-main</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
 	</pluginRepositories>
 
 	<repositories>
@@ -53,12 +63,22 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
+		<repository>
+			<id>github-main</id>
+			<url>https://maven.pkg.github.com/farhan5248/sheep-dog-main</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
 	</repositories>
 
 	<distributionManagement>
 		<repository>
 			<id>github</id>
-			<url>https://maven.pkg.github.com/farhan5248/sheep-dog-local</url>
+			<url>https://maven.pkg.github.com/farhan5248/sheep-dog-main</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
