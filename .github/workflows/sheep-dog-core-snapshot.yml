@@ -1,4 +1,4 @@
-name: Publish Sheep Dog Local Snapshot
+name: Publish Sheep Dog Core Snapshot
 
 on:
   workflow_dispatch:
