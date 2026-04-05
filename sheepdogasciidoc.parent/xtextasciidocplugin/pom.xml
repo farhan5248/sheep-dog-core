@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>org.farhan</groupId>
 		<artifactId>sheepdogasciidoc.parent</artifactId>
-		<version>1.3-SNAPSHOT</version>
+		<version>1.3</version>
 	</parent>
 	<artifactId>sheepdogasciidoc</artifactId>
 	<packaging>jar</packaging>
 
 	<properties>
-		<sheep-dog-grammar.version>1.43-SNAPSHOT</sheep-dog-grammar.version>
+		<sheep-dog-grammar.version>1.42</sheep-dog-grammar.version>
 	</properties>
 	<build>
 		<plugins>
