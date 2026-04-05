@@ -126,7 +126,7 @@
 		<dependency>
 			<groupId>org.farhan</groupId>
 			<artifactId>sheep-dog-grammar</artifactId>
-			<version>1.41-SNAPSHOT</version>
+			<version>${sheep-dog-grammar.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
