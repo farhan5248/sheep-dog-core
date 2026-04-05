@@ -11,7 +11,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
-		<sheep-dog-grammar.version>1.43-SNAPSHOT</sheep-dog-grammar.version>
 	</properties>
 	<modules>
 		<module>xtextasciidocplugin</module>
