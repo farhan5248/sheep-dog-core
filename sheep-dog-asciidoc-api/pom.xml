@@ -2,14 +2,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.farhan</groupId>
 	<artifactId>sheep-dog-asciidoc-api</artifactId>
-	<version>1.1-SNAPSHOT</version>
+	<version>1.1</version>
 	<name>Sheep Dog AsciiDoc API</name>
 	<description>Transforms AsciiDoc documents to UML models and vice-versa</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>21</java.version>
-		<sheepdogasciidoc.version>1.1.0-SNAPSHOT</sheepdogasciidoc.version>
+		<sheepdogasciidoc.version>1.1.0</sheepdogasciidoc.version>
 	</properties>
 
 	<scm>
