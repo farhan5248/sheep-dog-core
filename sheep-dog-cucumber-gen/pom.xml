@@ -12,7 +12,6 @@
 		<sheepdogcucumber.version>1.4.0-SNAPSHOT</sheepdogcucumber.version>
 		<sheep-dog-asciidoc-api.version>1.1-SNAPSHOT</sheep-dog-asciidoc-api.version>
 		<sheep-dog-grammar.version>1.42-SNAPSHOT</sheep-dog-grammar.version>
-		<sheep-dog-mgmt-maven-plugin.version>1.17-SNAPSHOT</sheep-dog-mgmt-maven-plugin.version>
 	</properties>
 
 	<scm>
@@ -201,7 +200,7 @@
 			<plugin>
 				<groupId>org.farhan</groupId>
 				<artifactId>sheep-dog-mgmt-maven-plugin</artifactId>
-				<version>${sheep-dog-mgmt-maven-plugin.version}</version>
+				<version>1.16</version>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
