@@ -2,14 +2,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.farhan</groupId>
 	<artifactId>sheep-dog-grammar</artifactId>
-	<version>1.42-SNAPSHOT</version>
+	<version>1.42</version>
 	<name>Sheep Dog Grammar</name>
 	<description>Core grammar logic shared across Xtext projects for content assist, validation, and code generation, with Cucumber BDD tests</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>21</java.version>
-		<sheep-dog-mgmt-maven-plugin.version>1.17-SNAPSHOT</sheep-dog-mgmt-maven-plugin.version>
+		<sheep-dog-mgmt-maven-plugin.version>1.16</sheep-dog-mgmt-maven-plugin.version>
 	</properties>
 
 	<scm>
