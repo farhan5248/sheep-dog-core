@@ -10,7 +10,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>21</java.version>
 		<sheepdogcucumber.version>1.8-SNAPSHOT</sheepdogcucumber.version>
-		<sheep-dog-asciidoc-api.version>1.8</sheep-dog-asciidoc-api.version>
+		<sheep-dog-asciidoc-api.version>1.9-SNAPSHOT</sheep-dog-asciidoc-api.version>
 		<sheep-dog-grammar.version>1.53-SNAPSHOT</sheep-dog-grammar.version>
 	</properties>
 
