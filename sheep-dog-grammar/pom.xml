@@ -4,7 +4,7 @@
 	<artifactId>sheep-dog-grammar</artifactId>
 	<version>1.49-SNAPSHOT</version>
 	<name>Sheep Dog Grammar</name>
-	<description>Core grammar logic shared across Xtext projects for content assist, validation, and code generation, with Cucumber BDD tests</description>
+	<description>Core grammar logic shared across Xtext projects for content assist, validation, and code generation with Cucumber BDD tests</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
