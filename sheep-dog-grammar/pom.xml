@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.farhan</groupId>
 	<artifactId>sheep-dog-grammar</artifactId>
-	<version>1.46-SNAPSHOT</version>
+	<version>1.46</version>
 	<name>Sheep Dog Grammar</name>
 	<description>Core grammar logic shared across Xtext projects for content assist, validation, and code generation, with Cucumber BDD tests</description>
 
