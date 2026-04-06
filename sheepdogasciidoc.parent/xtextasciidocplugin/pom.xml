@@ -11,7 +11,7 @@
 	<packaging>jar</packaging>
 
 	<properties>
-		<sheep-dog-grammar.version>1.51</sheep-dog-grammar.version>
+		<sheep-dog-grammar.version>1.52-SNAPSHOT</sheep-dog-grammar.version>
 	</properties>
 	<build>
 		<plugins>
