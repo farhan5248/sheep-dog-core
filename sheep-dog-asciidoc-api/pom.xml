@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.farhan</groupId>
 	<artifactId>sheep-dog-asciidoc-api</artifactId>
-	<version>1.4</version>
+	<version>1.5-SNAPSHOT</version>
 	<name>Sheep Dog AsciiDoc API</name>
 	<description>Transforms AsciiDoc documents to UML models and vice-versa</description>
 
