@@ -19,7 +19,7 @@
 	<pluginRepositories>
 		<pluginRepository>
 			<id>github</id>
-			<url>https://maven.pkg.github.com/farhan5248/sheep-dog-local</url>
+			<url>https://maven.pkg.github.com/farhan5248/sheep-dog-main</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -30,16 +30,6 @@
 		<pluginRepository>
 			<id>eclipse-releases-plugin</id>
 			<url>https://repo.eclipse.org/content/groups/releases/</url>
-		</pluginRepository>
-		<pluginRepository>
-			<id>github-main</id>
-			<url>https://maven.pkg.github.com/farhan5248/sheep-dog-main</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
 
