@@ -99,7 +99,7 @@
 			<plugin>
 				<groupId>org.farhan</groupId>
 				<artifactId>sheep-dog-svc-maven-plugin</artifactId>
-				<version>1.4-SNAPSHOT</version>
+				<version>1.2</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -198,7 +198,7 @@
 			<plugin>
 				<groupId>org.farhan</groupId>
 				<artifactId>sheep-dog-mgmt-maven-plugin</artifactId>
-				<version>1.19</version>
+				<version>1.21</version>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
