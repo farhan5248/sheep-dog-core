@@ -2,6 +2,9 @@ name: Publish Sheep Dog Cucumber Release
 
 on:
   workflow_dispatch:
+concurrency:
+  group: sheep-dog-core
+  cancel-in-progress: false
 permissions:
   contents: write
   packages: write
