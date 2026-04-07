@@ -1,10 +1,16 @@
-# Sheep Dog Cucumber Grammar
+# Sheep Dog Cucumber Parser
 
-Xtext grammar and parser for Cucumber/Gherkin feature files.
+Xtext-based DSL for Cucumber/Gherkin feature files with formatting, validation, and code generation.
 
 ## Overview
 
-This project provides an Xtext-based DSL for parsing and manipulating Cucumber feature files. It defines the grammar for Gherkin syntax including Features, Scenarios, Backgrounds, and step definitions. The parsed model can be used by transformation and validation tools.
+Multi-module project containing an Xtext grammar for parsing and manipulating Cucumber feature files. Defines the grammar for Gherkin syntax including Features, Scenarios, Backgrounds, and step definitions.
+
+## Modules
+
+| Module | Description |
+|--------|-------------|
+| sheepdogcucumber | Core Xtext grammar, parser, formatter, validator, and generator |
 
 ## Key Functionality
 
@@ -17,6 +23,12 @@ This project provides an Xtext-based DSL for parsing and manipulating Cucumber f
 
 ## Technology
 
-- Maven multi-module build
-- Eclipse Xtext 2.41
+- Eclipse Xtext 2.42
+- Eclipse EMF
 - Java 21
+
+## Build
+
+```
+scripts/install.bat
+```

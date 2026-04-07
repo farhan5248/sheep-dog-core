@@ -10,11 +10,11 @@ AsciiDoc <-> UML Model <-> Cucumber/JUnit
 
 | Project | Description |
 |---------|-------------|
-| sheep-dog-grammar | Xtext grammar and test project with Cucumber scenarios |
-| sheepdogasciidoc.parent | AsciiDoc Xtext parser and LSP server |
-| sheepdogcucumber.parent | Cucumber Xtext parser framework |
-| sheep-dog-asciidoc-api | AsciiDoc to UML API library (depends on sheepdogasciidoc.parent) |
-| sheep-dog-cucumber-gen | Cucumber code generation library (depends on sheep-dog-asciidoc-api, sheepdogcucumber.parent) |
+| sheep-dog-grammar | Core grammar logic and validation framework shared across Xtext DSL projects |
+| sheepdogasciidoc.parent | Xtext-based AsciiDoc parser and LSP server |
+| sheepdogcucumber.parent | Xtext-based Cucumber/Gherkin parser |
+| sheep-dog-asciidoc-api | Bidirectional transformation between AsciiDoc and UML models |
+| sheep-dog-cucumber-gen | Generates Cucumber test code and step definitions from UML models |
 
 ## Build Order
 

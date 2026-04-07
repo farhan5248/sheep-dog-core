@@ -1,31 +1,35 @@
-# Xtext AsciiDoc Plugin for VS Code
+# Sheep Dog AsciiDoc Parser
 
-VS Code extension providing language support for Sheep Dog AsciiDoc specifications.
+Xtext-based DSL for AsciiDoc specification files with formatting, validation, and code generation.
 
 ## Overview
 
-This is a multi-project build containing an Xtext-based language server and VS Code extension for editing AsciiDoc specification files. It provides IDE features like syntax highlighting, validation, code completion, and formatting using the Language Server Protocol (LSP).
+Multi-module project containing an Xtext grammar and Language Server Protocol (LSP) implementation for AsciiDoc specifications. The LSP server is consumed by both the VS Code and Eclipse IDE plugins.
 
-## Sub-projects
+## Modules
 
-- **xtextasciidocplugin**: Core Xtext grammar and parser for AsciiDoc DSL
-- **xtextasciidocplugin.ide**: Language Server Protocol implementation
-- **xtextasciidocplugin.vscode**: VS Code extension (TypeScript)
+| Module | Description |
+|--------|-------------|
+| xtextasciidocplugin | Core Xtext grammar, parser, formatter, validator, and generator |
+| xtextasciidocplugin.ide | LSP server implementation |
 
 ## Key Functionality
 
-- Syntax highlighting with custom color themes
-- Real-time validation with error markers
-- Code completion and content assist
-- Document formatting
-- Go to definition and find references
-- Document outline and symbol navigation
-- Generate code command
+- Xtext grammar for Sheep Dog AsciiDoc specification format
+- Formatting rules for consistent document structure
+- Validation with error markers
+- Code generation from AsciiDoc specifications
+- Scoping provider for cross-reference resolution
 
 ## Technology
 
-- Gradle multi-project build
-- Eclipse Xtext 2.40
-- TypeScript (VS Code extension)
+- Eclipse Xtext 2.42
+- Eclipse EMF
 - Language Server Protocol (LSP)
-- Node.js 20
+- Java 21
+
+## Build
+
+```
+scripts/install.bat
+```

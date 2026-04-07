@@ -1,24 +1,26 @@
-# Sheep Dog Development Library
+# Sheep Dog AsciiDoc API
 
-Core transformation library that converts specifications to UML models and generates code.
+API for bidirectional transformation between AsciiDoc specifications and UML models.
 
 ## Overview
 
-This is the heart of the Sheep Dog ecosystem. It provides bidirectional transformations between AsciiDoctor/Cucumber specifications and Eclipse UML2 models. It can also generate Java step definition classes from UML models for different testing frameworks.
+Converts AsciiDoc specification documents into Eclipse UML2 models and back. This is the core transformation library that bridges the specification format with the UML model representation used throughout the ecosystem.
 
 ## Key Functionality
 
-- AsciiDoctor to UML model transformation
-- UML model to AsciiDoctor generation
-- Cucumber to UML model transformation
-- UML model to Cucumber feature generation
-- Java step definition code generation (plain, Guice, Spring variants)
-- UML model classes: TestProject, TestSuite, TestCase, TestStep, StepDefinition, StepObject
+- AsciiDoc to UML model transformation
+- UML model to AsciiDoc generation
+- UML model classes: UMLTestProject, UMLTestSuite, UMLTestCase, UMLTestStep, UMLStepDefinition, UMLStepObject
 
 ## Technology
 
-- Eclipse UML2 for model representation
-- Eclipse Xtext for DSL parsing
-- JavaParser for Java code generation
-- Depends on sheepdogxtextplugin and sheepdogcucumber
+- Eclipse EMF/UML2
+- Eclipse Xtext
+- Depends on sheepdogasciidoc.parent
 - Java 21
+
+## Build
+
+```
+scripts/install.bat
+```
