@@ -159,7 +159,7 @@ public class EditDocumentActionImpl extends TestObjectSheepDogImpl implements Ed
     }
 
     @Override
-    public void setPerformedToModifyStepParametersListWith(HashMap<String, String> keyMap) {
+    public void setPerformedToModifyStepParameterListWith(HashMap<String, String> keyMap) {
         navigateToDocument();
         navigateToNode();
         if (getProperty("Step Parameters Name") != null) {
@@ -180,7 +180,7 @@ public class EditDocumentActionImpl extends TestObjectSheepDogImpl implements Ed
 
     private void navigateToNode() {
         if (getProperty("Node Path") != null) {
-            setCursorAtNode(getProperty("Node Path").toString());
+            navigateToNode(getProperty("Node Path").toString(), true);
             properties.remove("Node Path");
         }
     }

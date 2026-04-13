@@ -68,7 +68,7 @@ Feature: Proposals for Workspace Step Parameters
           | is created as follows | H1, H2, H3           |
       And The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file LineList node is created as follows
           | Node Path                                                      | Line Content                 |
-          | StepDefinitionList/1/StepParametersList/1/Description/LineList | Header parameters for tables |
+          | StepDefinitionList/1/StepParameterList/1/Description/LineList | Header parameters for tables |
      When The xtext plugin list proposals action is performed as follows
           | Test Suite Full Name         | Node Path                                              |
           | specs/ProcessIssues.asciidoc | TestStepContainerList/1/TestStepList/1/Table/RowList/1 |

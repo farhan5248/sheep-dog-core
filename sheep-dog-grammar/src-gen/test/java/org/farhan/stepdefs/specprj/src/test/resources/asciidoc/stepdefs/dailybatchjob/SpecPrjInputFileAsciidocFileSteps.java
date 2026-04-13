@@ -55,19 +55,19 @@ public class SpecPrjInputFileAsciidocFileSteps extends TestSteps {
         object.assertVertexStep("StepDefinitionList", "node", "will be", "created as follows", dataTable);
     }
 
-    @Given("^The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file StepParametersList node is created as follows$")
+    @Given("^The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file StepParameterList node is created as follows$")
     public void stepParametersListNodeIsCreatedAsFollows(DataTable dataTable) {
-        object.setVertexStep("StepParametersList", "node", "is", "created as follows", dataTable);
+        object.setVertexStep("StepParameterList", "node", "is", "created as follows", dataTable);
     }
 
-    @Given("^The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file StepParametersList node will be as follows$")
+    @Given("^The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file StepParameterList node will be as follows$")
     public void stepParametersListNodeWillBeAsFollows(DataTable dataTable) {
-        object.assertVertexStep("StepParametersList", "node", "will be", "as follows", dataTable);
+        object.assertVertexStep("StepParameterList", "node", "will be", "as follows", dataTable);
     }
 
-    @Given("^The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file StepParametersList node will be created as follows$")
+    @Given("^The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file StepParameterList node will be created as follows$")
     public void stepParametersListNodeWillBeCreatedAsFollows(DataTable dataTable) {
-        object.assertVertexStep("StepParametersList", "node", "will be", "created as follows", dataTable);
+        object.assertVertexStep("StepParameterList", "node", "will be", "created as follows", dataTable);
     }
 
     @Given("^The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file Table node will be as follows$")

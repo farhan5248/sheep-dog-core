@@ -84,9 +84,9 @@ Feature: Quickfixes for Workspace Issues
           | is set as follows    | E1, E2, E3           |
       And The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file CellList node is created as follows
           | Node Path                                                          | Cell Name |
-          | StepDefinitionList/1/StepParametersList/1/Table/RowList/1/CellList | E1        |
-          | StepDefinitionList/1/StepParametersList/1/Table/RowList/1/CellList | E2        |
-          | StepDefinitionList/1/StepParametersList/1/Table/RowList/1/CellList | E3        |
+          | StepDefinitionList/1/StepParameterList/1/Table/RowList/1/CellList | E1        |
+          | StepDefinitionList/1/StepParameterList/1/Table/RowList/1/CellList | E2        |
+          | StepDefinitionList/1/StepParameterList/1/Table/RowList/1/CellList | E3        |
       And The xtext plugin validate annotation is set as follows
           """
           The step parameters don't exist for the step definition
@@ -117,8 +117,8 @@ Feature: Quickfixes for Workspace Issues
           | is set as follows    | N1, N2               |
       And The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file CellList node is created as follows
           | Node Path                                                          | Cell Name |
-          | StepDefinitionList/1/StepParametersList/1/Table/RowList/1/CellList | N1        |
-          | StepDefinitionList/1/StepParametersList/1/Table/RowList/1/CellList | N2        |
+          | StepDefinitionList/1/StepParameterList/1/Table/RowList/1/CellList | N1        |
+          | StepDefinitionList/1/StepParameterList/1/Table/RowList/1/CellList | N2        |
       And The xtext plugin validate annotation is set as follows
           """
           The step parameters don't exist for the step definition
@@ -167,7 +167,7 @@ Feature: Quickfixes for Workspace Issues
           | is set as follows    | Content              |
       And The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file CellList node is created as follows
           | Node Path                                                          | Cell Name |
-          | StepDefinitionList/1/StepParametersList/1/Table/RowList/1/CellList | Content   |
+          | StepDefinitionList/1/StepParameterList/1/Table/RowList/1/CellList | Content   |
       And The xtext plugin validate annotation is empty
      When The xtext plugin list quickfixes action is performed as follows
           | Test Suite Full Name         | Node Path                                    |

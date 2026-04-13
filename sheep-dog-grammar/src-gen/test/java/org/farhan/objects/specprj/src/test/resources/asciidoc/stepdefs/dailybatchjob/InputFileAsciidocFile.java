@@ -50,21 +50,21 @@ public interface InputFileAsciidocFile {
 
     public String getStepDefinitionListNodeStepDefinitionName(HashMap<String, String> keyMap);
 
-    public void setStepParametersListNodeCreatedAsFollows(HashMap<String, String> keyMap);
+    public void setStepParameterListNodeCreatedAsFollows(HashMap<String, String> keyMap);
 
-    public void setStepParametersListNodeNodePath(HashMap<String, String> keyMap);
+    public void setStepParameterListNodeNodePath(HashMap<String, String> keyMap);
 
-    public void setStepParametersListNodeStepParametersName(HashMap<String, String> keyMap);
+    public void setStepParameterListNodeStepParametersName(HashMap<String, String> keyMap);
 
-    public String getStepParametersListNodeAsFollows(HashMap<String, String> keyMap);
+    public String getStepParameterListNodeAsFollows(HashMap<String, String> keyMap);
 
-    public String getStepParametersListNodeNodePath(HashMap<String, String> keyMap);
+    public String getStepParameterListNodeNodePath(HashMap<String, String> keyMap);
 
-    public String getStepParametersListNodeState(HashMap<String, String> keyMap);
+    public String getStepParameterListNodeState(HashMap<String, String> keyMap);
 
-    public String getStepParametersListNodeCreatedAsFollows(HashMap<String, String> keyMap);
+    public String getStepParameterListNodeCreatedAsFollows(HashMap<String, String> keyMap);
 
-    public String getStepParametersListNodeStepParametersName(HashMap<String, String> keyMap);
+    public String getStepParameterListNodeStepParametersName(HashMap<String, String> keyMap);
 
     public String getTableNodeAsFollows(HashMap<String, String> keyMap);
 

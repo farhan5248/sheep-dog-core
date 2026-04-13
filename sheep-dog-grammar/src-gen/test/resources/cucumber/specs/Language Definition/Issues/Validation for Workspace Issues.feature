@@ -55,7 +55,7 @@ Feature: Validation for Workspace Issues
           | is set as follows    | Existing Header      |
       And The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file CellList node is created as follows
           | Node Path                                                          | Cell Name       |
-          | StepDefinitionList/1/StepParametersList/1/Table/RowList/1/CellList | Existing Header |
+          | StepDefinitionList/1/StepParameterList/1/Table/RowList/1/CellList | Existing Header |
      When The xtext plugin validate action is performed as follows
           | Test Suite Full Name         | Node Path                                              |
           | specs/ProcessIssues.asciidoc | TestStepContainerList/1/TestStepList/1/Table/RowList/1 |
@@ -79,7 +79,7 @@ Feature: Validation for Workspace Issues
           | is set as follows    | Content              |
       And The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file CellList node is created as follows
           | Node Path                                                          | Cell Name |
-          | StepDefinitionList/1/StepParametersList/1/Table/RowList/1/CellList | Content   |
+          | StepDefinitionList/1/StepParameterList/1/Table/RowList/1/CellList | Content   |
      When The xtext plugin validate action is performed as follows
           | Test Suite Full Name         | Node Path                                    |
           | specs/ProcessIssues.asciidoc | TestStepContainerList/1/TestStepList/1/Text/ |
@@ -100,8 +100,8 @@ Feature: Validation for Workspace Issues
           | is set as follows    | Content, Format      |
       And The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file CellList node is created as follows
           | Node Path                                                          | Cell Name |
-          | StepDefinitionList/1/StepParametersList/1/Table/RowList/1/CellList | Content   |
-          | StepDefinitionList/1/StepParametersList/1/Table/RowList/1/CellList | Format    |
+          | StepDefinitionList/1/StepParameterList/1/Table/RowList/1/CellList | Content   |
+          | StepDefinitionList/1/StepParameterList/1/Table/RowList/1/CellList | Format    |
      When The xtext plugin validate action is performed as follows
           | Test Suite Full Name         | Node Path                                    |
           | specs/ProcessIssues.asciidoc | TestStepContainerList/1/TestStepList/1/Text/ |
@@ -153,8 +153,8 @@ Feature: Validation for Workspace Issues
           | is set as follows    | N1, N2               |
       And The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file CellList node is created as follows
           | Node Path                                                          | Cell Name |
-          | StepDefinitionList/1/StepParametersList/1/Table/RowList/1/CellList | N1        |
-          | StepDefinitionList/1/StepParametersList/1/Table/RowList/1/CellList | N2        |
+          | StepDefinitionList/1/StepParameterList/1/Table/RowList/1/CellList | N1        |
+          | StepDefinitionList/1/StepParameterList/1/Table/RowList/1/CellList | N2        |
      When The xtext plugin validate action is performed as follows
           | Test Suite Full Name         | Node Path                                              |
           | specs/ProcessIssues.asciidoc | TestStepContainerList/1/TestStepList/1/Table/RowList/1 |

@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.farhan.common.TestObject;
 import org.farhan.dsl.grammar.SheepDogBuilder;
 import org.farhan.dsl.grammar.SheepDogFactory;
@@ -30,6 +33,8 @@ public class TestObjectSheepDogImpl extends TestObject {
     public static void reset() {
         SheepDogFactory.instance = ISheepDogFactory.eINSTANCE;
         ITestProject workspace = SheepDogBuilder.createTestProject();
+        Resource resource = new ResourceImpl(URI.createURI("sheepdog://workspace"));
+        resource.getContents().add((org.eclipse.emf.ecore.EObject) workspace);
         setProperty("workspace", workspace);
         setProperty("cursor", workspace);
         setProperty("validate annotation.Content", "");
@@ -339,7 +344,7 @@ public class TestObjectSheepDogImpl extends TestObject {
                     return SheepDogBuilder.createCell((IRow) parent, "");
                 case "StepDefinitionList":
                     return SheepDogBuilder.createStepDefinition((IStepObject) parent, "");
-                case "StepParametersList":
+                case "StepParameterList":
                     return SheepDogBuilder.createStepParameters((IStepDefinition) parent, "");
                 case "LineList":
                     return SheepDogBuilder.createLine((IDescription) parent, "");

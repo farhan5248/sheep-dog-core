@@ -30,7 +30,7 @@ public interface EditDocumentAction {
 
     public void setStepDefinitionName(HashMap<String, String> keyMap);
 
-    public void setPerformedToModifyStepParametersListWith(HashMap<String, String> keyMap);
+    public void setPerformedToModifyStepParameterListWith(HashMap<String, String> keyMap);
 
     public void setStepParametersName(HashMap<String, String> keyMap);
 

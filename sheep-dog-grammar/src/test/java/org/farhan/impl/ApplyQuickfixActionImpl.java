@@ -73,7 +73,7 @@ public class ApplyQuickfixActionImpl extends TestObjectSheepDogImpl implements A
             properties.remove("Test Suite Full Name");
         }
         if (getProperty("Node Path") != null) {
-            setCursorAtNode(getProperty("Node Path").toString());
+            navigateToNode(getProperty("Node Path").toString(), true);
             properties.remove("Node Path");
         }
         try {

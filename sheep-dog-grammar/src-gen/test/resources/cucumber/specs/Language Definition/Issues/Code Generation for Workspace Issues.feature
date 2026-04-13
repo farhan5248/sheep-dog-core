@@ -76,9 +76,9 @@ Feature: Code Generation for Workspace Issues
           | is set as follows    | E1, E2, E3           |
       And The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file CellList node is created as follows
           | Node Path                                                          | Cell Name |
-          | StepDefinitionList/1/StepParametersList/1/Table/RowList/1/CellList | E1        |
-          | StepDefinitionList/1/StepParametersList/1/Table/RowList/1/CellList | E2        |
-          | StepDefinitionList/1/StepParametersList/1/Table/RowList/1/CellList | E3        |
+          | StepDefinitionList/1/StepParameterList/1/Table/RowList/1/CellList | E1        |
+          | StepDefinitionList/1/StepParameterList/1/Table/RowList/1/CellList | E2        |
+          | StepDefinitionList/1/StepParameterList/1/Table/RowList/1/CellList | E3        |
       And The xtext plugin validate annotation is set as follows
           """
           The step parameters don't exist for the step definition
@@ -92,14 +92,14 @@ Feature: Code Generation for Workspace Issues
      Then The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file will be created as follows
           | Step Definition Name |
           | is set as follows    |
-      And The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file StepParametersList node will be created as follows
+      And The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file StepParameterList node will be created as follows
           | Node Path                               | Step Parameters Name |
-          | StepDefinitionList/1/StepParametersList | E1, E2, E3           |
-          | StepDefinitionList/1/StepParametersList | N1, N2               |
+          | StepDefinitionList/1/StepParameterList | E1, E2, E3           |
+          | StepDefinitionList/1/StepParameterList | N1, N2               |
       And The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file CellList node will be created as follows
           | Node Path                                                          | Cell Name |
-          | StepDefinitionList/1/StepParametersList/2/Table/RowList/1/CellList | N1        |
-          | StepDefinitionList/1/StepParametersList/2/Table/RowList/1/CellList | N2        |
+          | StepDefinitionList/1/StepParameterList/2/Table/RowList/1/CellList | N1        |
+          | StepDefinitionList/1/StepParameterList/2/Table/RowList/1/CellList | N2        |
 
   Scenario: This object step definition text parameter doesn't exist generation
 
@@ -129,5 +129,5 @@ Feature: Code Generation for Workspace Issues
           | is set as follows    | Content              |
       And The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file CellList node will be created as follows
           | Node Path                                                          | Cell Name |
-          | StepDefinitionList/1/StepParametersList/1/Table/RowList/1/CellList | Content   |
+          | StepDefinitionList/1/StepParameterList/1/Table/RowList/1/CellList | Content   |
 

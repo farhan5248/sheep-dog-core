@@ -23,9 +23,9 @@ Feature: StepDefinition Type
      Then The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file StepDefinitionList node will be created as follows
           | Node Path            | Step Definition Name   |
           | StepDefinitionList/2 | Second Step Definition |
-      And The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file StepParametersList node will be as follows
+      And The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file StepParameterList node will be as follows
           | Node Path                               | State |
-          | StepDefinitionList/1/StepParametersList | Empty |
+          | StepDefinitionList/1/StepParameterList | Empty |
       And The spec-prj project src/test/resources/asciidoc/stepdefs/daily batchjob/Input file.asciidoc file Description node will be as follows
           | Node Path                        | State  |
           | StepDefinitionList/1/Description | Absent |
