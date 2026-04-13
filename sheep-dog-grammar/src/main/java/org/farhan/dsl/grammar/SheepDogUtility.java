@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Static helper methods for grammar element operations.
@@ -15,7 +16,7 @@ import org.slf4j.Logger;
  */
 public class SheepDogUtility {
 
-    private static final Logger logger = SheepDogLoggerFactory.getLogger(SheepDogUtility.class);
+    private static final Logger logger = LoggerFactory.getLogger(SheepDogUtility.class);
 
     /**
      * Creates a deep clone of a step object without parent association.

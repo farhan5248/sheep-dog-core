@@ -2,7 +2,7 @@ package org.farhan.dsl.asciidoc.impl;
 
 import java.io.File;
 import org.slf4j.Logger;
-import org.farhan.dsl.grammar.SheepDogLoggerFactory;
+import org.slf4j.LoggerFactory;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.farhan.dsl.grammar.IResourceRepository;
@@ -14,7 +14,7 @@ import org.farhan.dsl.grammar.SheepDogFactory;
 
 public class TestProjectImpl implements ITestProject {
 
-	private static Logger logger = SheepDogLoggerFactory.getLogger(TestProjectImpl.class);
+	private static Logger logger = LoggerFactory.getLogger(TestProjectImpl.class);
 
 	private IResourceRepository sr;
 	private String projectPath;

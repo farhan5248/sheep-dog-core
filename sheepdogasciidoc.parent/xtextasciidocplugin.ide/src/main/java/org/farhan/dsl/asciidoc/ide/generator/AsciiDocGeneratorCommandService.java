@@ -11,7 +11,7 @@ import org.eclipse.xtext.ide.server.commands.IExecutableCommandService;
 import org.eclipse.xtext.util.CancelIndicator;
 import org.farhan.dsl.asciidoc.generator.AsciiDocGenerator;
 import org.slf4j.Logger;
-import org.farhan.dsl.grammar.SheepDogLoggerFactory;
+import org.slf4j.LoggerFactory;
 
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -19,7 +19,7 @@ import com.google.gson.JsonPrimitive;
 
 public class AsciiDocGeneratorCommandService implements IExecutableCommandService {
 
-	private static final Logger logger = SheepDogLoggerFactory.getLogger(AsciiDocGeneratorCommandService.class);
+	private static final Logger logger = LoggerFactory.getLogger(AsciiDocGeneratorCommandService.class);
 
 	@Override
 	public List<String> initialize() {

@@ -38,24 +38,6 @@
 
 **Desc**: Grammar model interfaces and creation infrastructure. Separates interface contracts from implementations, initialization logic from factory operations, and persistence contracts from business logic.
 
-### {Language}LoggerFactory
-
-**Desc**: Facade for logger creation that abstracts SLF4J vs custom logger providers. Separates logging infrastructure concerns from business logic by hiding provider selection and fallback.
-
-**Rule**: ONE class matches LoggerFactory pattern
-
-**Regex**: `^{Language}LoggerFactory$`
- - `SheepDogLoggerFactory`
-
-### {Language}LoggerProvider
-
-**Desc**: Interface for custom logger implementations. Separates logger provider contract from logger usage, enabling dependency injection in environments without SLF4J.
-
-**Rule**: ONE class matches LoggerProvider pattern
-
-**Regex**: `^{Language}LoggerProvider$`
- - `SheepDogLoggerProvider`
-
 ### IResourceRepository
 
 **Desc**: Repository interface for file I/O operations. Separates persistence contracts from business logic, allowing different implementations (filesystem, in-memory, Eclipse workspace).

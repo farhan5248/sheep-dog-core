@@ -1,7 +1,7 @@
 package org.farhan.dsl.asciidoc.ide;
 
 import org.slf4j.Logger;
-import org.farhan.dsl.grammar.SheepDogLoggerFactory;
+import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -24,7 +24,7 @@ import com.google.inject.util.Modules;
 
 public class MultiProjectServerLauncher {
 
-	private static final Logger logger = SheepDogLoggerFactory.getLogger(MultiProjectServerLauncher.class);
+	private static final Logger logger = LoggerFactory.getLogger(MultiProjectServerLauncher.class);
 
 	private static boolean IS_DEBUG = false;
 

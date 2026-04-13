@@ -1,10 +1,10 @@
 package org.farhan.dsl.issues;
 
-import org.farhan.dsl.grammar.SheepDogLoggerFactory;
 import org.farhan.dsl.grammar.StepObjectRefFragments;
 import org.farhan.dsl.grammar.ITestStep;
 import org.farhan.dsl.grammar.ITestStepContainer;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Validation logic for grammar elements at different scopes.
@@ -15,7 +15,7 @@ import org.slf4j.Logger;
  */
 public class TestStepContainerIssueDetector {
 
-    private static final Logger logger = SheepDogLoggerFactory.getLogger(TestStepContainerIssueDetector.class);
+    private static final Logger logger = LoggerFactory.getLogger(TestStepContainerIssueDetector.class);
 
     /**
      * Validates a specific grammar assignment at element-only, file, or workspace

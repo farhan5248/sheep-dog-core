@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.List;
 
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Static factory for creating and initializing grammar elements.
@@ -17,7 +18,7 @@ public class SheepDogBuilder {
     // TODO Builder creates the child and adds it to the parent. It also adds
     // statement list etc. The child source type is String. Add this desc to the
     // pattern
-    private static final Logger logger = SheepDogLoggerFactory.getLogger(SheepDogBuilder.class);
+    private static final Logger logger = LoggerFactory.getLogger(SheepDogBuilder.class);
 
     private static <T> void addSorted(List<T> list, T element, java.util.function.Function<T, String> nameExtractor) {
         String name = nameExtractor.apply(element);

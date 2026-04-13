@@ -5,7 +5,6 @@ import java.util.LinkedHashSet;
 
 import org.farhan.dsl.grammar.SheepDogBuilder;
 import org.farhan.dsl.grammar.SheepDogIssueProposal;
-import org.farhan.dsl.grammar.SheepDogLoggerFactory;
 import org.farhan.dsl.grammar.SheepDogUtility;
 import org.farhan.dsl.grammar.StepObjectRefFragments;
 import org.farhan.dsl.grammar.IStepDefinition;
@@ -16,6 +15,7 @@ import org.farhan.dsl.grammar.ITestStep;
 import org.farhan.dsl.grammar.ITestStepContainer;
 import org.farhan.dsl.grammar.ITestSuite;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Quick fix proposal generation for validation errors.
@@ -26,7 +26,7 @@ import org.slf4j.Logger;
  */
 public class TestStepIssueResolver {
 
-    private static final Logger logger = SheepDogLoggerFactory.getLogger(TestStepIssueResolver.class);
+    private static final Logger logger = LoggerFactory.getLogger(TestStepIssueResolver.class);
 
     /**
      * Generates proposals correcting values when an assignment exists but is

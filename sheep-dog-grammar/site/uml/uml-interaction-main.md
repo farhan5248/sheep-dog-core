@@ -3,7 +3,6 @@
 **References**
 
 1. `sheep-dog-specs/site/impl/impl-logging.md` - SLF4J logging patterns
-2. `sheep-dog-specs/site/impl/impl-xtext-logging.md` - Xtext logging patterns
 
 ## All
 
@@ -203,44 +202,6 @@ public static IStepDefinition createStepDefinition(IStepObject parent, String na
 }
 ```
 
-## {Language}LoggerFactory
-
-### getLogger
-
-Gets a logger for the specified class. Uses SLF4J when available, otherwise delegates to custom {Language}LoggerProvider.
-
-**Example: Method body**
-```java
-public static Logger getLogger(Class<?> clazz) {
-    if (org.slf4j.LoggerFactory.getILoggerFactory() instanceof org.slf4j.helpers.NOPLoggerFactory) {
-        if (provider != null) {
-            return provider.getLogger(clazz);
-        }
-    }
-    return org.slf4j.LoggerFactory.getLogger(clazz);
-}
-```
-
-**Example: Standard usage**
-```java
-private static final Logger logger = SheepDogLoggerFactory.getLogger(TestStepIssueDetector.class);
-```
-
-### setLoggerImplementation
-
-Configures a custom logger provider when SLF4J is unavailable (e.g., in Eclipse/OSGi environments).
-
-**Example: Setting custom logger**
-```java
-// In Eclipse plugin activator
-SheepDogLoggerFactory.setLoggerImplementation(new LoggerProvider() {
-    @Override
-    public Logger getLogger(Class<?> clazz) {
-        return new EclipseLogger(clazz);
-    }
-});
-```
-
 ## {Language}Utility
 
 ### get{Type}FullNameFor{Type}
@@ -430,36 +391,6 @@ for (StepObjectRefComponentTypes component : StepObjectRefComponentTypes.values(
     if (stepText.contains(component.value)) {
         // Found component type
         return component;
-    }
-}
-```
-
-## {Language}LoggerProvider
-
-### getLogger
-
-Interface method allows external systems to inject custom logger implementations when SLF4J providers are not available.
-
-**Example: Interface definition**
-```java
-public interface SheepDogLoggerProvider {
-    public Logger getLogger(Class<?> clazz);
-}
-```
-
-**Example: Eclipse plugin implementation**
-```java
-public class EclipseLoggerProvider implements SheepDogLoggerProvider {
-    @Override
-    public Logger getLogger(Class<?> clazz) {
-        return new Logger() {
-            @Override
-            public void debug(String msg) {
-                Platform.getLog(Activator.getContext().getBundle())
-                    .log(new Status(IStatus.INFO, "plugin.id", msg));
-            }
-            // ... other methods
-        };
     }
 }
 ```

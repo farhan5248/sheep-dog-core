@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.farhan.dsl.grammar.SheepDogBuilder;
 import org.farhan.dsl.grammar.SheepDogIssueProposal;
-import org.farhan.dsl.grammar.SheepDogLoggerFactory;
 import org.farhan.dsl.grammar.SheepDogUtility;
 import org.farhan.dsl.grammar.ICell;
 import org.farhan.dsl.grammar.IRow;
@@ -16,6 +15,7 @@ import org.farhan.dsl.grammar.ITable;
 import org.farhan.dsl.grammar.ITestProject;
 import org.farhan.dsl.grammar.ITestStep;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Quick fix proposal generation for validation errors.
@@ -26,7 +26,7 @@ import org.slf4j.Logger;
  */
 public class RowIssueResolver {
 
-    private static final Logger logger = SheepDogLoggerFactory.getLogger(RowIssueResolver.class);
+    private static final Logger logger = LoggerFactory.getLogger(RowIssueResolver.class);
 
     /**
      * Generates proposals correcting values when an assignment exists but is

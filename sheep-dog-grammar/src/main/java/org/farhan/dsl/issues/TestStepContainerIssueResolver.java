@@ -3,9 +3,9 @@ package org.farhan.dsl.issues;
 import java.util.ArrayList;
 
 import org.farhan.dsl.grammar.SheepDogIssueProposal;
-import org.farhan.dsl.grammar.SheepDogLoggerFactory;
 import org.farhan.dsl.grammar.ITestStepContainer;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Quick fix proposal generation for validation errors.
@@ -16,7 +16,7 @@ import org.slf4j.Logger;
  */
 public class TestStepContainerIssueResolver {
 
-    private static final Logger logger = SheepDogLoggerFactory.getLogger(TestStepContainerIssueResolver.class);
+    private static final Logger logger = LoggerFactory.getLogger(TestStepContainerIssueResolver.class);
 
     /**
      * Generates proposals correcting values when an assignment exists but is

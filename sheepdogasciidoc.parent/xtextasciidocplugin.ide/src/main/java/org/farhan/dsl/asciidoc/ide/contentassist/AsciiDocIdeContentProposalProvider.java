@@ -1,7 +1,7 @@
 package org.farhan.dsl.asciidoc.ide.contentassist;
 
 import org.slf4j.Logger;
-import org.farhan.dsl.grammar.SheepDogLoggerFactory;
+import org.slf4j.LoggerFactory;
 
 import org.eclipse.xtext.ide.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ide.editor.contentassist.ContentAssistEntry;
@@ -26,7 +26,7 @@ import org.farhan.dsl.asciidoc.impl.TestStepImpl;
  */
 public class AsciiDocIdeContentProposalProvider extends IdeContentProposalProvider {
 
-	private static final Logger logger = SheepDogLoggerFactory.getLogger(AsciiDocIdeContentProposalProvider.class);
+	private static final Logger logger = LoggerFactory.getLogger(AsciiDocIdeContentProposalProvider.class);
 
 	@Override
 	protected void _createProposals(Assignment assignment, ContentAssistContext context,
